@@ -1,0 +1,21 @@
+ .avatar {
+	background-color: #ffffff;
+	border-radius: 250px;
+	margin: 0 auto;
+	position: absolute;
+	text-align: center;
+	top: 85vh;
+	height: 300px;
+	width: 300px;
+	display: block;
+	left: 0;
+	right: 0;
+	visibility: hidden;
+	z-index: 2;
+  	img {
+		border-radius: 250px;
+		margin: 0 auto;
+		height: 300px;
+		width: 300px;
+	}
+ }

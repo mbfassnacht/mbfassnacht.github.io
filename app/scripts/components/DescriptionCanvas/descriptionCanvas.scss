@@ -1,0 +1,35 @@
+ .description-canvas {
+	margin-top: 0px;
+	z-index: 1;
+	min-height: 600px;
+	background-color: rgb(0,0,0);
+	text-align: center;
+	color: white;
+	font-family: 'Raleway', Helvetica, Arial, sans-serif;
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#000000), to(#ffffff));
+	background: -webkit-linear-gradient(top, #000000 50%, #ffffff);
+	background: linear-gradient(top, #000000, #ffffff);
+
+	.title {
+		margin-top: 240px;
+		margin-bottom: 20px;
+		font-weight: 800;
+		letter-spacing: 5px;
+		line-height: 60px;
+		font-size: 35px;
+	}
+
+	.description {
+		font-size: 22px;
+		font-weight: 100;
+	}
+
+	#description-container{
+		margin-bottom: 50px;
+	}
+
+	#canvas-container {
+		position: absolute;
+		width: 100%;
+	}
+}

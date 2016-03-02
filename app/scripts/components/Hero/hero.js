@@ -3,6 +3,7 @@ var model = require('./hero-model');
 var ReactDOM = require('react-dom');
 var TweenMax = require('gsap');
 var Arrow = require('../Arrow/arrow');
+var Avatar = require('../Avatar/avatar');
 
 var Hero = React.createClass({
 
@@ -16,6 +17,11 @@ var Hero = React.createClass({
   		TweenMax.fromTo(job, 0.4, {autoAlpha: 0, y: 50}, {delay: 0.6, autoAlpha: 1, y: 0, ease: Power2.easeOut});
 
 	},
+	
+	onScroll: function() {
+		this.refs.avatar.animateImage(window.scrollY);
+	},
+	
 	render: function() {
 		return (
 			<div id="hero">
@@ -23,9 +29,7 @@ var Hero = React.createClass({
 					<h2 className="title-text name">{model.name}</h2>
 					<h3 className="title-text job">{model.job}</h3>
 				</div>
-				<div className="avatar">
-					<img className="image" src="../assets/images/profile.png"></img>
-				</div>
+				<Avatar ref={'avatar'}></Avatar>
 				<Arrow></Arrow>
 			</div>
 		);
