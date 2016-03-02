@@ -2,6 +2,7 @@ var React = require('react');
 var model = require('./hero-model');
 var ReactDOM = require('react-dom');
 var TweenMax = require('gsap');
+var Arrow = require('../Arrow/arrow');
 
 var Hero = React.createClass({
 
@@ -25,9 +26,7 @@ var Hero = React.createClass({
 				<div className="avatar">
 					<img className="image" src="../assets/images/profile.png"></img>
 				</div>
-				<div id="down-button" className="white circle-button">
-					<span className="glyphicon glyphicon-chevron-down" aria-hidden="true"></span>
-				</div>
+				<Arrow></Arrow>
 			</div>
 		);
 	}
