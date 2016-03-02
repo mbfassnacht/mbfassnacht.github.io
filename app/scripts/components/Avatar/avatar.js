@@ -6,7 +6,6 @@ var TweenMax = require('gsap');
 var Avatar = React.createClass({
 
 	animateImage: function (scrollTop) {
-		console.log(scrollTop);
 		if (this.imageHide && scrollTop > 150) {
 			this.imageHide = false;
 			TweenMax.fromTo(this.image, 0.8, {autoAlpha: 0, scaleX: 0.2, scaleY: 0.2}, 
