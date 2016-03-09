@@ -20,7 +20,6 @@ var Landing = React.createClass({
   	return (
         <div id="landing">
           <Hero ref={'hero'}></Hero>
-          <DescriptionCanvas></DescriptionCanvas>
         </div>
       );
     }

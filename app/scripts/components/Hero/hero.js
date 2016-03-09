@@ -25,12 +25,11 @@ var Hero = React.createClass({
 	render: function() {
 		return (
 			<div id="hero">
+				<div className="background-image"></div>
 				<div className="container col-md-6 col-md-offset-3">
 					<h2 className="title-text name">{model.name}</h2>
 					<h3 className="title-text job">{model.job}</h3>
 				</div>
-				<Avatar ref={'avatar'}></Avatar>
-				<Arrow></Arrow>
 			</div>
 		);
 	}
