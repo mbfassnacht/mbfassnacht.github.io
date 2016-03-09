@@ -1,0 +1,21 @@
+#contact {
+	.socials {
+	  list-style: none;
+	  li {
+	  	img {
+	  		height: 50px;
+	  		width: 50px;
+	  		cursor: pointer;
+		}
+		p {
+	  		color: #000000;
+		}
+	  } 
+	}
+
+	.title {
+		margin-bottom: 40px;
+		background-color: #000000;
+		color: white;
+	}
+}
