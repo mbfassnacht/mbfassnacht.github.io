@@ -3,6 +3,8 @@
 	  list-style: none;
 	  li {
 	  	text-align: center;
+	  	width: 20%;
+		display: inline-block;
 	  	img {
 	  		height: 50px;
 	  		width: 50px;
@@ -20,17 +22,29 @@
 	}
 	
 	@media (max-width: 600px) {
+		.title {
+			font-size: 25px;
+		}
 
-	  .socials li{
-	    color: transparent;
-	  }
-	  .socials li img{
-	    height: 40px;
-	    width: 40px;
-	    color: transparent;
-	  }
-	  .socials li p{
-	    display: none;
-	  }
+		.socials{
+
+			li {
+				color: transparent;
+				width: 20%;
+				display: inline-block;
+			}
+		}
+		.socials {
+			li  {
+				img {
+					height: 40px;
+					width: 40px;
+					color: transparent;
+				}
+				p {
+					display: none;
+				}
+			} 
+		}
 	}
 }

@@ -37,15 +37,20 @@
 	}
 
 	@media (max-width: 600px) {
-		min-height: 300px;
+		min-height: 350px;
 
 	  	.description-container { 
 			.title {
-		    	font-size: 30px;
-		   		padding-top: 50px;
+		    	font-size: 20px;
+		   		padding-top: 110px;
 		 	}
+		 	.sub-title {
+				font-size: 16px;
+			}
 			.description {
 		    	font-size: 15px;
+		    	padding-left: 20px;
+    			padding-right: 20px;
 		  	}
 		}
 	}
