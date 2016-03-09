@@ -15,31 +15,31 @@ var Contact = React.createClass({
 	    <ul className="socials container-fluid">
 	      <li className="col-xs-2 col-xs-offset-1">
 	        <a href="mailto:maximobelen@me.com">
-	          <img src="./images/contact/email.png"></img>
+	          <img src="./assets/images/contact/email.png"></img>
 	          <p>EMAIL</p>
 	        </a>
 	      </li>
 	      <li className="col-xs-2">
 	        <a href="http://twitter.com/maximobelen">
-	          <img src="./images/contact/twitter.png"></img>
+	          <img src="./assets/images/contact/twitter.png"></img>
 	          <p>TWITTER</p>
 	        </a>
 	      </li>
 	      <li className="col-xs-2">
 	        <a href="https://www.npmjs.com/~maximobelen">
-	          <img src="./images/contact/npm.png"></img>
+	          <img src="./assets/images/contact/npm.png"></img>
 	          <p>NPM</p>
 	        </a>
 	      </li>
 	      <li className="col-xs-2">
 	        <a href="https://github.com/maximobelen">
-	          <img src="./images/contact/github.png"></img>
+	          <img src="./assets/images/contact/github.png"></img>
 	          <p>GITHUB</p>
 	        </a>
 	      </li>
 	      <li className="col-xs-2">
 	        <a href="https://uy.linkedin.com/in/maximobelen">
-	          <img src="./images/contact/linkedin.png"></img>
+	          <img src="./assets/images/contact/linkedin.png"></img>
 	          <p>LINKEDIN</p>
 	        </a>
 	      </li>

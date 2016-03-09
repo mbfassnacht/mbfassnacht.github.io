@@ -1,7 +1,7 @@
  .description-canvas {
 	margin-top: 0px;
 	z-index: 1;
-	min-height: 600px;
+	min-height: 500px;
 	background-color: rgb(128, 184, 0);
 	text-align: center;
 	color: black;
@@ -37,6 +37,7 @@
 	}
 
 	@media (max-width: 600px) {
+		min-height: 300px;
 
 	  	.description-container { 
 			.title {

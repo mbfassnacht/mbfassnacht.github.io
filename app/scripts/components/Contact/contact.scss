@@ -2,6 +2,7 @@
 	.socials {
 	  list-style: none;
 	  li {
+	  	text-align: center;
 	  	img {
 	  		height: 50px;
 	  		width: 50px;
@@ -15,7 +16,21 @@
 
 	.title {
 		margin-bottom: 40px;
-		background-color: #000000;
-		color: white;
+		text-align: center;
+	}
+	
+	@media (max-width: 600px) {
+
+	  .socials li{
+	    color: transparent;
+	  }
+	  .socials li img{
+	    height: 40px;
+	    width: 40px;
+	    color: transparent;
+	  }
+	  .socials li p{
+	    display: none;
+	  }
 	}
 }

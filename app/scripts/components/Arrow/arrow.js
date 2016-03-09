@@ -5,16 +5,16 @@ var TweenMax = require('gsap');
 var ScrollManager = require('scroll-manager');
 
 var Arrow = React.createClass({
-	
+
 	componentDidMount: function() {
+		this.hidden = false;
 		this.scroller =  new ScrollManager();
 		this.container = ReactDOM.findDOMNode(this);
   		TweenMax.to(this.container, 0.4, {delay:0.8, autoAlpha: 1});
 	},
 
 	handleMouseDown: function(){
-		  TweenMax.fromTo(this.container, 0.4, {autoAlpha: 1},{autoAlpha: 0});
-		  this.scroller.scrollTo({element: document.body, to: 600, duration: 0.8, ease:'easeOutCubic'});
+		this.scroller.scrollTo({element: document.body, to: 800, duration: 0.8, ease:'easeOutCubic'});
 	},
 
 	render: function() {
