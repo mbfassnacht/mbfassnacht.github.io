@@ -30,6 +30,9 @@ var Hero = React.createClass({
 					<h2 className="title-text name">{model.name}</h2>
 					<h3 className="title-text job">{model.job}</h3>
 				</div>
+				<Arrow></Arrow>
+				<Avatar ref={'avatar'}></Avatar>
+
 			</div>
 		);
 	}

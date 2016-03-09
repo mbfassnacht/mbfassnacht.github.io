@@ -90,9 +90,10 @@ var DescriptionCanvas = React.createClass({
 		return (
 			<div className="description-canvas">
 				<div id="canvas-container" ref={'canvas'}></div>
-				<div id="description-container">
-					<p className="description col-md-10 col-md-offset-1">{model.subtitle}</p>
-					<p className="description col-md-10 col-md-offset-1">{model.description}</p>
+				<div className="description-container">
+					<p className="title">{model.title}</p>
+					<p className="sub-title">{model.subtitle}</p>
+					<p className="description">{model.description}</p>
 				</div>
 			</div>
 		);

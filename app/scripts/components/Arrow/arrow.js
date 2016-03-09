@@ -2,19 +2,24 @@ var React = require('react');
 var ReactDOM = require('react-dom');
 var model = require('./arrow-model');
 var TweenMax = require('gsap');
+var ScrollManager = require('scroll-manager');
 
 var Arrow = React.createClass({
 	
 	componentDidMount: function() {
+		this.scroller =  new ScrollManager();
 		this.container = ReactDOM.findDOMNode(this);
-
   		TweenMax.to(this.container, 0.4, {delay:0.8, autoAlpha: 1});
+	},
 
+	handleMouseDown: function(){
+		  TweenMax.fromTo(this.container, 0.4, {autoAlpha: 1},{autoAlpha: 0});
+		  this.scroller.scrollTo({element: document.body, to: 600, duration: 0.8, ease:'easeOutCubic'});
 	},
 
 	render: function() {
 		return (
-			<div id="arrow" className="white circle-button">
+			<div id="arrow" className="white circle-button" onMouseDown={this.handleMouseDown}>
 				<span className="glyphicon glyphicon-chevron-down" aria-hidden="true"></span>
 			</div>
 		);

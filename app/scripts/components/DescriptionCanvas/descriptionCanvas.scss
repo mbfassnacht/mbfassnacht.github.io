@@ -2,34 +2,50 @@
 	margin-top: 0px;
 	z-index: 1;
 	min-height: 600px;
-	background-color: rgb(0,0,0);
+	background-color: rgb(254, 0, 0);
 	text-align: center;
-	color: white;
+	color: black;
 	font-family: 'Raleway', Helvetica, Arial, sans-serif;
-	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#000000), to(#ffffff));
-	background: -webkit-linear-gradient(top, #000000 50%, #ffffff);
-	background: linear-gradient(top, #000000, #ffffff);
 
-	.title {
-		margin-top: 240px;
-		margin-bottom: 20px;
-		font-weight: 800;
-		letter-spacing: 5px;
-		line-height: 60px;
-		font-size: 35px;
-	}
+	.description-container { 
+	    max-width: 800px;
+	    margin: 0 auto;
 
-	.description {
-		font-size: 22px;
-		font-weight: 100;
-	}
+    	.title {
+			padding-top: 210px;
+			font-weight: 800;
+			font-size: 25px;
+		}
 
-	#description-container{
-		//(margin-bottom: 50px;
+    	.sub-title {
+			font-size: 20px;
+			padding-bottom: 20px;
+			color: black;
+		}
+
+		.description {
+			font-size: 18px;
+			font-weight: 100;
+			color: white;
+
+		}
 	}
 
 	#canvas-container {
 		position: absolute;
 		width: 100%;
+	}
+
+	@media (max-width: 600px) {
+
+	  	.description-container { 
+			.title {
+		    	font-size: 30px;
+		   		padding-top: 50px;
+		 	}
+			.description {
+		    	font-size: 15px;
+		  	}
+		}
 	}
 }
