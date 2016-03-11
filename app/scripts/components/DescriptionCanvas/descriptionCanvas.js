@@ -21,7 +21,7 @@ var DescriptionCanvas = React.createClass({
 		this.scene = new THREE.Scene();
 		this.scene.add(this.camera);
 
-		this.renderer = new THREE.WebGLRenderer({ alpha: true });
+		this.renderer =   renderer = new THREE.CanvasRenderer();
 		this.renderer.setSize( this.container.clientWidth - 30, this.container.clientHeight );
 		domElement.appendChild( this.renderer.domElement );
 		this.makeParticles(); 
@@ -62,19 +62,11 @@ var DescriptionCanvas = React.createClass({
 	   	var texture = new THREE.Texture();
     	texture.needsUpdate = true;
 		
-		for ( var zpos= -1000; zpos < 1000; zpos+=20 ) {
+		for ( var zpos= -1000; zpos < 1000; zpos+=10 ) {
 
-			material = new THREE.PointsMaterial( {
-		        size: 20,
-		        map: texture,
-		        blending: THREE.AdditiveBlending,
-		        depthTest: false,
-		        transparent: true,
-		        opacity: 1,
-		        vertexColors: true
-		    });
+			material = new THREE.ParticleCanvasMaterial( { color: 0xffffff, program: this.particleRender, opacity: 0.5 } );
+    		particle = new THREE.Particle(material);
 
-			particle = new THREE.Particle(material);
 			particle.position.x = Math.random() * 1000 - 500;
 			particle.position.y = Math.random() * 1000 - 500;
 			particle.position.z = zpos;
