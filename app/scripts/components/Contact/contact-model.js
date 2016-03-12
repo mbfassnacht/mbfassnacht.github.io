@@ -6,7 +6,7 @@ module.exports = {
 	 		'href': 'mailto:maximobelen@me.com',
 	 		'img': './assets/images/contact/email.png',
 	 		'title': 'EMAIL',
-	 		'color': '#F4F814'
+	 		'color': '#510000'
 	 	},
 	 	 {
 	 		'ref': 'twitter',
