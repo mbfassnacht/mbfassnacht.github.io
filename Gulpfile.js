@@ -21,7 +21,7 @@ var serverPort = 8000;
 gulp.task('dev', ['clean', 'copy', 'views', 'styles', 'lint', 'browserify'], function() { });
 
 // Release task
-gulp.task('release', ['clean', 'copy-cname', 'copy-release', 'views', 'styles-release', 'lint', 'browserify-release'], function() { });
+gulp.task('release', ['clean', 'copy-cname', 'copy-favicon', 'copy-release', 'views', 'styles-release', 'lint', 'browserify-release'], function() { });
 
 // Clean task
 gulp.task('clean', function() {
@@ -74,6 +74,13 @@ gulp.task('copy-cname', function() {
   var g = gulp.src('app/CNAME');
   return g.pipe(gulp.dest('dist/'));
 });
+
+// Copy Favicon
+gulp.task('copy-favicon', function() {
+  var g = gulp.src('app/favicon.ico');
+  return g.pipe(gulp.dest('dist/'));
+});
+
 // Browserify task
 gulp.task('browserify', function() {
   // Single point of entry (make sure not to src ALL your files, browserify will figure it out)
