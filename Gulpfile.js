@@ -13,6 +13,7 @@ var gulp = require('gulp'),
     open = require('gulp-open'),
     uglify = require('gulp-uglify'),
     minifyCss = require('gulp-minify-css'),
+    stripDebug = require('gulp-strip-debug'),
     autoprefixer = require('gulp-autoprefixer');
 
 var serverPort = 8000;
@@ -143,6 +144,7 @@ gulp.task('browserify-release', function() {
   // Bundle to a single file
   .pipe(concat('bundle.js'))
   .pipe(uglify())
+  .pipe(stripDebug())
   // Output it to our dist folder
   .pipe(gulp.dest('dist/js'))
   .pipe(connect.reload());
