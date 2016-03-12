@@ -1,10 +1,12 @@
 @import "./vars.scss";
 @import "./global.scss";
+@import "../scripts/components/About/about.scss";
+@import "../scripts/components/AboutPreview/aboutPreview.scss";
 @import "../scripts/components/Arrow/arrow.scss";
 @import "../scripts/components/Avatar/avatar.scss";
+@import "../scripts/components/Close/close.scss";
 @import "../scripts/components/Contact/contact.scss";
 @import "../scripts/components/DescriptionCanvas/descriptionCanvas.scss";
 @import "../scripts/components/ProjectsPreview/projectsPreview.scss";
-@import "../scripts/components/AboutPreview/aboutPreview.scss";
 @import "../scripts/components/Hero/hero.scss";
 @import "../scripts/components/Landing/landing.scss";
