@@ -49,6 +49,7 @@ var Contact = React.createClass({
 				</ul>
 				<div className="quick-data">
 					<p>Montevideo - Uruguay</p>
+					<p>maximobelen@me.com</p>
 				</div>
 				<div className="terms-container">
 					<p>Máximo Belén - All Rights Reserved ®</p>
