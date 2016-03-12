@@ -9,19 +9,22 @@ var Contact = React.createClass({
 		this.container = ReactDOM.findDOMNode(this);
 		this.divider = this.container.getElementsByClassName('divider')[0];
 		this.title = this.container.getElementsByClassName('title')[0];
+		this.linkNames = this.container.getElementsByClassName('link-name');
 		this.defaultColor = '#ffffff';
 	},
 
 	handleMouseEnter: function(color) {
 		TweenMax.to(this.container, 0.4, {'backgroundColor': color, ease: Expo.easeOut});
-		TweenMax.to(this.divider, 0.4, {width:'25%', 'backgroundColor':'#ffffff', ease: Expo.easeOut});
-		TweenMax.to(this.title, 0.4, {color:'#ffffff'});
+		TweenMax.to(this.divider, 0.4, {delay:0.2, width:'25%', 'backgroundColor':'#ffffff', ease: Expo.easeOut});
+		TweenMax.to(this.title, 0.4, {color:'#ffffff', ease: Expo.easeOut});
+		TweenMax.to(this.linkNames, 0.4, {delay:0.2, color:'#ffffff', ease: Expo.easeOut});
 	},
 
 	handleMouseLeave: function() {
 		TweenMax.to(this.container, 0.4, {'backgroundColor': this.defaultColor});
 		TweenMax.to(this.divider, 0.4, {width:'10%', 'backgroundColor':'#000000', ease: Expo.easeOut});
-		TweenMax.to(this.title, 0.4, {color:'#000000'});
+		TweenMax.to(this.title, 0.4, {color:'#000000', ease: Expo.easeOut});
+		TweenMax.to(this.linkNames, 0.4, {delay:0.2, color:'#000000', ease: Expo.easeOut});
 	},
 
 	render: function() {  
@@ -38,6 +41,7 @@ var Contact = React.createClass({
 						return <li key={i} ref="{object.ref}" >
 							<a href={object.href} target="_blank" onMouseEnter={this.handleMouseEnter.bind(this, object.color)} onMouseLeave={this.handleMouseLeave}>
 								<img src={object.img}></img>
+								<p className="link-name">{object.title}</p>
 							</a>
 						</li>;
 				    }.bind(this))
