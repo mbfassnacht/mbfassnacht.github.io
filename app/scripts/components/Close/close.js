@@ -20,12 +20,12 @@ var Close = React.createClass({
 	},
 
 	handleMouseEnter: function(){
-		TweenMax.to(this.container, 0.4, {rotation: "90"});
+		TweenMax.to(this.container, 0.4, {rotation: "90", ease: Expo.easeOut});
 
 	},
 
 	handleMouseLeave: function(){
-		TweenMax.to(this.container, 0.4, {rotation: "-90"});
+		TweenMax.to(this.container, 0.4, {rotation: "-90", ease: Expo.easeOut});
 
 	},
 

@@ -12,6 +12,14 @@ var Arrow = React.createClass({
 		this.container = ReactDOM.findDOMNode(this);
   		TweenMax.to(this.container, 0.4, {delay:0.8, autoAlpha: 1});
 	},
+	
+	handleMouseEnter: function(){
+		TweenMax.to(this.container, 0.4, {borderWidth:'6px', ease: Expo.easeOut});
+	},
+
+	handleMouseLeave: function(){
+		TweenMax.to(this.container, 0.4, {borderWidth:'2px', ease: Expo.easeOut});
+	},
 
 	handleMouseDown: function(){
 		this.scroller.scrollTo({element: document.body, to: window.innerHeight, duration: 0.8, ease:'easeOutCubic'});
@@ -19,7 +27,7 @@ var Arrow = React.createClass({
 
 	render: function() {
 		return (
-			<div id="arrow" className="white circle-button" onMouseDown={this.handleMouseDown}>
+			<div id="arrow" className="white circle-button" onMouseEnter={this.handleMouseEnter} onMouseLeave={this.handleMouseLeave} onMouseDown={this.handleMouseDown}>
 				<img className="image-arrow" src={model.arrow}></img>
 			</div>
 		);
