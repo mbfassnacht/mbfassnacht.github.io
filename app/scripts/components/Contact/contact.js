@@ -14,17 +14,17 @@ var Contact = React.createClass({
 	},
 
 	handleMouseEnter: function(color) {
-		TweenMax.to(this.container, 0.4, {'backgroundColor': color, ease: Expo.easeOut});
-		TweenMax.to(this.divider, 0.4, {delay:0.2, width:'25%', 'backgroundColor':'#ffffff', ease: Expo.easeOut});
-		TweenMax.to(this.title, 0.4, {color:'#ffffff', ease: Expo.easeOut});
-		TweenMax.to(this.linkNames, 0.4, {delay:0.2, color:'#ffffff', ease: Expo.easeOut});
+		// TweenMax.to(this.container, 0.4, {'backgroundColor': color, ease: Expo.easeOut});
+		// TweenMax.to(this.divider, 0.4, {delay:0.2, width:'25%', 'backgroundColor':'#ffffff', ease: Expo.easeOut});
+		// TweenMax.to(this.title, 0.4, {color:'#ffffff', ease: Expo.easeOut});
+		// TweenMax.to(this.linkNames, 0.4, {delay:0.2, color:'#ffffff', ease: Expo.easeOut});
 	},
 
 	handleMouseLeave: function() {
-		TweenMax.to(this.container, 0.4, {'backgroundColor': this.defaultColor});
-		TweenMax.to(this.divider, 0.4, {width:'10%', 'backgroundColor':'#000000', ease: Expo.easeOut});
-		TweenMax.to(this.title, 0.4, {color:'#000000', ease: Expo.easeOut});
-		TweenMax.to(this.linkNames, 0.4, {delay:0.2, color:'#000000', ease: Expo.easeOut});
+		// TweenMax.to(this.container, 0.4, {'backgroundColor': this.defaultColor});
+		// TweenMax.to(this.divider, 0.4, {width:'10%', 'backgroundColor':'#000000', ease: Expo.easeOut});
+		// TweenMax.to(this.title, 0.4, {color:'#000000', ease: Expo.easeOut});
+		// TweenMax.to(this.linkNames, 0.4, {delay:0.2, color:'#000000', ease: Expo.easeOut});
 	},
 
 	render: function() {  
