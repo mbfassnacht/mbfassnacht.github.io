@@ -20,7 +20,12 @@
 		-moz-animation: bounce 2s infinite;
 		-o-animation: bounce 2s infinite;
 	}
+	.image-arrow {
+		width: 30px;
+    	margin-top: -5px;
 
+	}
+	
 	&.black{
 		border: 2px solid #000000;
 		color: #000000;

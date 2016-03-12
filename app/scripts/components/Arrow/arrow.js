@@ -20,7 +20,7 @@ var Arrow = React.createClass({
 	render: function() {
 		return (
 			<div id="arrow" className="white circle-button" onMouseDown={this.handleMouseDown}>
-				<span className="glyphicon glyphicon-chevron-down" aria-hidden="true"></span>
+				<img className="image-arrow" src={model.arrow}></img>
 			</div>
 		);
 	}
