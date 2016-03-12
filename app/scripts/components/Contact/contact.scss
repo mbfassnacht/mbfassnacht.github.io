@@ -2,12 +2,18 @@
 	background-color: #ffffff;
 	min-height: 500px;
 	padding-top: 100px;
+	font-family: $lato;
+
 	.socials {
 	  list-style: none;
+	  padding-left: 0px;
 	  li {
 	  	text-align: center;
 	  	width: 20%;
 		display: inline-block;
+		a {
+			text-decoration: none;
+		}
 	  	img {
 	  		height: 50px;
 	  		width: 50px;
@@ -24,7 +30,6 @@
 
 	.title {
 		text-align: center;
-		font-family: $lato;
 		font-size: 50px;
 	}
 	.divider {
@@ -36,7 +41,19 @@
 		margin-bottom: 80px;
 
 	}
-
+	.quick-data {
+		font-size: 15px;
+		text-align: center;
+		margin-top: 80px;
+		span {
+			width: 100%;
+		}
+	}
+	.terms-container {
+		font-size: 15px;
+		text-align: center;
+		padding-bottom: 20px;
+	}
 	@media (max-width: 600px) {
 		.title {
 			font-size: 25px;

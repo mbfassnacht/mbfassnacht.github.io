@@ -11,6 +11,12 @@ var AboutPreview = React.createClass({
 		this.container = ReactDOM.findDOMNode(this);
 		this.body = document.body;
 		this.divider = this.container.getElementsByClassName('divider')[0];
+		this.scrollContainer = this.container.getElementsByClassName('scroll-container')[0];
+
+	},
+
+	closeHandler: function(value) {
+		this.hide();
 	},
 
 	hide: function() {
@@ -21,16 +27,33 @@ var AboutPreview = React.createClass({
 	show: function() {
 		TweenMax.to(this.container, 0.4, {autoAlpha: 1, zIndex: 1000});
 		TweenMax.set(this.body, {overflow: 'hidden'});
+		var height = window.innerHeight - 50 + 'px';
+		TweenMax.set(this.scrollContainer, {height: height});
 	},
 
 	render: function() {
 		return (
 			<div className="about">
-				<Close></Close>
+				<Close onClicked={this.closeHandler} ></Close>
 				<div className="scroll-container">
 					<div className="title">{model.title}</div>
-					<div className="description">{model.description}</div>
-					<div className="signature"></div>
+					<div className="description">
+						{
+						  	model.description.map(function(object, i){	 
+								return <p key={i} ref="{object.ref}" >
+								{model.description[i]}
+								</p>;
+						    }.bind(this))
+						}
+
+					</div>
+					<div className="phrase-container">
+						<div className="phrase">"{model.phrase}"</div>
+						<div className="author">{model.author}</div>
+					</div>
+					<div className="signature">
+						<img className="signature-image" src={model.signature}></img>
+					</div>
 				</div>
 			</div>
 		);

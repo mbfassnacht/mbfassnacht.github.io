@@ -14,7 +14,9 @@ var Close = React.createClass({
 	},
 
 	handleMouseDown: function(){
-
+        if (typeof this.props.onClicked === 'function') {
+            this.props.onClicked();
+        }
 	},
 
 	handleMouseEnter: function(){
