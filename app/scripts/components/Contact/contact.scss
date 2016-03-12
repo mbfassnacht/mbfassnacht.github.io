@@ -1,7 +1,7 @@
 #contact {
 	background-color: #ffffff;
-	min-height: 200px;
-	padding-top: 25px;
+	min-height: 500px;
+	padding-top: 100px;
 	.socials {
 	  list-style: none;
 	  li {
@@ -20,10 +20,20 @@
 	}
 
 	.title {
-		margin-bottom: 40px;
 		text-align: center;
+		font-family: $lato;
+		font-size: 50px;
 	}
-	
+	.divider {
+		width: 10%;
+		height: 5px;
+		background-color: #000000;
+		margin-right: auto;
+		margin-left: auto;
+		margin-bottom: 40px;
+
+	}
+
 	@media (max-width: 600px) {
 		.title {
 			font-size: 25px;

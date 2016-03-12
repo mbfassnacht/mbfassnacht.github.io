@@ -3,7 +3,6 @@ var model = require('./hero-model');
 var ReactDOM = require('react-dom');
 var TweenMax = require('gsap');
 var Arrow = require('../Arrow/arrow');
-var Avatar = require('../Avatar/avatar');
 
 var Hero = React.createClass({
 
@@ -18,10 +17,6 @@ var Hero = React.createClass({
 
 	},
 	
-	onScroll: function() {
-		this.refs.avatar.animateImage(window.scrollY);
-	},
-	
 	render: function() {
 		return (
 			<div id="hero">
@@ -31,8 +26,6 @@ var Hero = React.createClass({
 					<h3 className="title-text job">{model.job}</h3>
 				</div>
 				<Arrow ref={'arrow'}></Arrow>
-				<Avatar ref={'avatar'}></Avatar>
-
 			</div>
 		);
 	}

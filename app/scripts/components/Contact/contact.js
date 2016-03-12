@@ -1,52 +1,51 @@
 var React = require('react');
+var ReactDOM = require('react-dom');
 var model = require('./contact-model');
+var TweenMax = require('gsap');
 
 var Contact = React.createClass({
   
-  componentDidMount: function() {
+	componentDidMount: function() {
+		this.container = ReactDOM.findDOMNode(this);
+		this.divider = this.container.getElementsByClassName('divider')[0];
+		this.title = this.container.getElementsByClassName('title')[0];
+		this.defaultColor = '#ffffff';
+	},
 
-  },
+	handleMouseEnter: function(color) {
+		TweenMax.to(this.container, 0.4, {'backgroundColor': color, ease: Expo.easeOut});
+		TweenMax.to(this.divider, 0.4, {width:'25%', 'backgroundColor':'#ffffff', ease: Expo.easeOut});
+		TweenMax.to(this.title, 0.4, {color:'#ffffff'});
+	},
 
-  render: function() {  
-  
-  	return (
-	  <div id="contact" className="section contact">
-	    <h2 className="title">CONTACT ME</h2>
-	    <ul className="socials container-fluid">
-	      <li className="">
-	        <a href="mailto:maximobelen@me.com">
-	          <img src="./assets/images/contact/email.png"></img>
-	          <p>EMAIL</p>
-	        </a>
-	      </li>
-	      <li className="">
-	        <a href="http://twitter.com/maximobelen">
-	          <img src="./assets/images/contact/twitter.png"></img>
-	          <p>TWITTER</p>
-	        </a>
-	      </li>
-	      <li className="">
-	        <a href="https://www.npmjs.com/~maximobelen">
-	          <img src="./assets/images/contact/npm.png"></img>
-	          <p>NPM</p>
-	        </a>
-	      </li>
-	      <li className="">
-	        <a href="https://github.com/maximobelen">
-	          <img src="./assets/images/contact/github.png"></img>
-	          <p>GITHUB</p>
-	        </a>
-	      </li>
-	      <li className="">
-	        <a href="https://uy.linkedin.com/in/maximobelen">
-	          <img src="./assets/images/contact/linkedin.png"></img>
-	          <p>LINKEDIN</p>
-	        </a>
-	      </li>
-	    </ul>
-	  </div>
-      );
-    }
+	handleMouseLeave: function() {
+		TweenMax.to(this.container, 0.4, {'backgroundColor': this.defaultColor});
+		TweenMax.to(this.divider, 0.4, {width:'10%', 'backgroundColor':'#000000', ease: Expo.easeOut});
+		TweenMax.to(this.title, 0.4, {color:'#000000'});
+	},
+
+	render: function() {  
+
+		return (
+		  	<div id="contact" className="section contact">
+				<h2 className="title">CONTACT ME</h2>
+				<div className="divider"></div>
+
+				<ul className="socials container-fluid">
+				{
+				  	model.socials.map(function(object, i){
+				    	 
+						return <li key={i} ref="{object.ref}" >
+							<a href={object.href} target="_blank" onMouseEnter={this.handleMouseEnter.bind(this, object.color)} onMouseLeave={this.handleMouseLeave}>
+								<img src={object.img}></img>
+							</a>
+						</li>;
+				    }.bind(this))
+				}
+				</ul>
+			</div>
+		);
+   	}
 });
 
 module.exports = Contact;

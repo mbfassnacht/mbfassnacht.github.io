@@ -14,7 +14,7 @@ var Arrow = React.createClass({
 	},
 
 	handleMouseDown: function(){
-		this.scroller.scrollTo({element: document.body, to: 460, duration: 0.8, ease:'easeOutCubic'});
+		this.scroller.scrollTo({element: document.body, to: window.innerHeight, duration: 0.8, ease:'easeOutCubic'});
 	},
 
 	render: function() {

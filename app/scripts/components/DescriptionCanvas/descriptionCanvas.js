@@ -3,6 +3,7 @@ var ReactDOM = require('react-dom');
 var model = require('./descriptionCanvas-model');
 var TweenMax = require('gsap');
 var THREE = require('three');
+var Avatar = require('../Avatar/avatar');
 
 var DescriptionCanvas = React.createClass({
 
@@ -10,6 +11,10 @@ var DescriptionCanvas = React.createClass({
 		this.container = ReactDOM.findDOMNode(this);
 		this.particles= [];
 		this.initCanvas();
+	},
+	
+	onScroll: function() {
+		this.refs.avatar.animateImage(window.scrollY);
 	},
 
 	initCanvas: function () {
@@ -83,6 +88,7 @@ var DescriptionCanvas = React.createClass({
 			<div className="description-canvas">
 				<div id="canvas-container" ref={'canvas'}></div>
 				<div className="description-container">
+					<Avatar ref={'avatar'}></Avatar>
 					<p className="title">{model.title}</p>
 					<p className="sub-title">{model.subtitle}</p>
 					<p className="description">{model.description}</p>

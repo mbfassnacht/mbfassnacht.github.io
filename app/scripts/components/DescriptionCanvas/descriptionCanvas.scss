@@ -1,20 +1,24 @@
  .description-canvas {
 	margin-top: 0px;
 	z-index: 1;
-	min-height: 500px;
+	min-height: $section-min-height;
 	background-color: $olive-green;
 	text-align: center;
 	color: black;
 	font-family: 'Raleway', Helvetica, Arial, sans-serif;
-
+	position: relative;
 	.description-container { 
 	    max-width: 800px;
 	    margin: 0 auto;
-
+  		text-align: center;
+	  	transform: translateX(-50%) translateY(-50%);
+	    position: absolute;
+	    top: 50%;
+		left: 50%;
     	.title {
-			padding-top: 210px;
+			padding-top: 20px;
 			font-weight: 800;
-			font-size: 30px;
+			font-size: 40px;
 		}
 
     	.sub-title {
@@ -36,21 +40,31 @@
 		width: 100%;
 	}
 
-	@media (max-width: 600px) {
-		min-height: 350px;
+	@media (max-width: 600px) and (orientation: portrait) {
 
 	  	.description-container { 
 			.title {
-		    	font-size: 20px;
-		   		padding-top: 110px;
+		    	font-size: 6vw;
 		 	}
 		 	.sub-title {
-				font-size: 16px;
+				font-size: 4vw;
 			}
 			.description {
-		    	font-size: 15px;
-		    	padding-left: 20px;
-    			padding-right: 20px;
+		    	font-size: 4vw;
+		  	}
+		}
+	}
+	@media (max-width: 600px) and (orientation: landscape) {
+
+	  	.description-container { 
+			.title {
+		    	font-size: 6vh;
+		 	}
+		 	.sub-title {
+				font-size: 4vh;
+			}
+			.description {
+		    	font-size: 4vh;
 		  	}
 		}
 	}
