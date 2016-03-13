@@ -21,6 +21,17 @@
 			background-color: #ffffff;
 			margin: 0 auto;
 		}
+
+		a {
+			color:#ffffff;
+			text-decoration: none;
+
+			&:visited {color:#ffffff;}  /* visited link */
+			&:hover {color:#ffffff;}  /* mouse over link */
+			&:active {color:#ffffff;}  /* selected link */
+		}
+
+
 	}
 	
 }

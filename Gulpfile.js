@@ -1,7 +1,6 @@
 'use strict';
 
 var gulp = require('gulp'),
-    jshint = require('gulp-jshint'),
     browserify = require('gulp-browserify'),
     reactify = require ('reactify'),
     concat = require('gulp-concat'),
@@ -19,10 +18,10 @@ var gulp = require('gulp'),
 var serverPort = 8000;
 
 // Dev task
-gulp.task('dev', ['clean', 'copy', 'views', 'styles', 'lint', 'browserify'], function() { });
+gulp.task('dev', ['clean', 'copy', 'views', 'styles', 'browserify'], function() { });
 
 // Release task
-gulp.task('release', ['clean', 'copy-cname', 'copy-favicon', 'copy-release', 'views', 'styles-release', 'lint', 'browserify-release'], function() { });
+gulp.task('release', ['clean', 'copy-cname', 'copy-favicon', 'copy-release', 'views', 'styles-release', 'browserify-release'], function() { });
 
 // Clean task
 gulp.task('clean', function() {
@@ -43,13 +42,6 @@ gulp.task('connect', function () {
     host: '0.0.0.0',
     livereload: true
   });
-});
-
-// JSHint task
-gulp.task('lint', function() {
-  gulp.src('app/scripts/*.js')
-  .pipe(jshint())
-  .pipe(jshint.reporter('default'));
 });
 
 // Styles task
@@ -112,11 +104,10 @@ gulp.task('views', function() {
   .pipe(gulp.dest('dist/views/'));
 });
 
-gulp.task('watch', ['lint'], function() {
+gulp.task('watch', function() {
 
-  // Watch our scripts, and when they change run lint and browserify
+  // Watch our scripts, and when they change run browserify
   gulp.watch(['app/scripts/*.js', 'app/scripts/**/*.js'],[
-    'lint',
     'browserify'
   ]);
   // Watch our sass files
