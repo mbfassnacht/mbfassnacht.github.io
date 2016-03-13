@@ -15,7 +15,15 @@ var App = React.createClass({
   		"../assets/images/contact/github.png",
   		"../assets/images/contact/linkedin.png",
   		"../assets/images/contact/npm.png",
-  		"../assets/images/contact/twitter.png"
+  		"../assets/images/contact/twitter.png",
+      "../assets/images/contact/apia.png",
+      "../assets/images/contact/bst.png",
+      "../assets/images/contact/buenavianda.png",
+      "../assets/images/contact/customizer.png",
+      "../assets/images/contact/internetorg.png",
+      "../assets/images/contact/k12.png",
+      "../assets/images/contact/nfl.png",
+      "../assets/images/contact/sonsofgallipoli.png"
   	];
 
   	var loadingIndicator = (<div className="loader"></div>);

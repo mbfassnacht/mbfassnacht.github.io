@@ -8,12 +8,17 @@
 	.content-container {
 
 		.image-container {
-			min-width: 522px;
     		height: 100%;
 			.image {
     			max-width: 100%;
 			}
 		}
+
+	}
+
+	@media (max-width: 800px) {
+		width: 100%;
+		display: initial;
 
 	}
 }

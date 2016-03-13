@@ -33,7 +33,7 @@ module.exports = {
 			{
 				'name': 'BST',
 				'client': 'BST',
-				'image': '../assets/images/projects/customizer.png'
+				'image': '../assets/images/projects/bst.png'
 			}
 		],
 		[
