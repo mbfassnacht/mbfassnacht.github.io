@@ -1,7 +1,7 @@
 var React = require('react');
 var model = require('./projects-model');
-
-var Contact = require('../Contact/contact');
+var ProjectsGrid = require('../ProjectsGrid/projectsGrid');
+var ProjectsViewer = require('../ProjectsViewer/projectsViewer');
 
 var Projects = React.createClass({
 
@@ -12,7 +12,8 @@ var Projects = React.createClass({
   render: function() {    
   	return (
         <div id="projects">
-          WELCOME!!!
+        	<ProjectsGrid></ProjectsGrid>
+        	<ProjectsViewer></ProjectsViewer>
         </div>
       );
     }
