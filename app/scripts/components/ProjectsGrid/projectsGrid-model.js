@@ -47,13 +47,6 @@ module.exports = {
 				'client': 'BPS',
 				'image': '../assets/images/projects/apia.png'
 			}	
-		],
-		[
-			{
-				'name': 'SCCE',
-				'client': 'ASSE',
-				'image': '../assets/images/projects/scce.png'
-			}
 		]
 	],
 	'publicCodes': [

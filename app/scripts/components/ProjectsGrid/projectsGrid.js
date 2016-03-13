@@ -12,14 +12,14 @@ var ProjectsGrid = React.createClass({
 		  	<div className="projects-grid">
 		  		{
 				  	model.projects.map(function(object, i){
-				  		return (<div className="project-row">
+				  		return (<div className="project-row" key={i}>
 					  		{
-						  		object.map(function(project, i){
+						  		object.map(function(project, j){
 									return (<Project 
-					    				ref={'project'+i}
+					    				ref={'project'+j}
 					    				name={project.name}
 					    				image={project.image}
-					    				key={i}/>);
+					    				key={j}/>);
 						  		})
 					  		}
 						</div>);
