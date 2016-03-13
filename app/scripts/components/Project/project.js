@@ -13,9 +13,6 @@ var Project = React.createClass({
 			  		<div className="image-container">
 			  			<img className="image" src={this.props.image}></img>
 					</div>
-					<div className="info-container">
-			  			<p className="project-name">{this.props.name}</p>
-					</div>
 				</div>
 			</div>
 		);
