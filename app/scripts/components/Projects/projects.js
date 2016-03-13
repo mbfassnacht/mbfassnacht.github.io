@@ -12,6 +12,7 @@ var Projects = React.createClass({
   render: function() {    
   	return (
         <div id="projects">
+        	<h1 className="title">{model.title}</h1>
         	<ProjectsGrid></ProjectsGrid>
         	<ProjectsViewer></ProjectsViewer>
         </div>
