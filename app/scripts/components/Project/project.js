@@ -8,7 +8,8 @@ var Project = React.createClass({
 	render: function() {  
 
 		return (
-		  	<div className="project" >
+		  	<div className="project">
+		  		<p className="project-name">{this.props.name}</p>
 			</div>
 		);
    	}

@@ -12,6 +12,10 @@ var Landing = React.createClass({
   componentDidMount: function() {
     window.addEventListener('scroll', this.refs.descriptionCanvas.onScroll, true);
   },
+  
+  componentWillUnmount: function() {
+    window.removeEventListener('scroll', this.refs.descriptionCanvas.onScroll, true);
+  },
 
   render: function() {    
   	return (
