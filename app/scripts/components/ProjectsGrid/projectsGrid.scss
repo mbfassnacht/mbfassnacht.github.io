@@ -7,4 +7,10 @@
     .project-row {
     	margin-bottom: 20px;
     }
+
+    @media (max-width: 800px) {
+    	.project-row {
+    		margin-bottom: 0px;
+    	}
+	}
 }
