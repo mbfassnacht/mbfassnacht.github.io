@@ -1,3 +1,31 @@
 .project {
-	
+	height: 300px; 
+	margin-left: 100px;
+	margin-right: 100px;
+	margin-bottom: 20px;
+	font-family: $lato;
+	.content-container {
+		height: 300px;
+
+		.image-container {
+			width: 522px;
+    		height: 100%;
+			float: left;
+			.image {
+				height: 100%;
+    			max-width: 100%;
+			}
+		}
+		.info-container {
+			width: calc(100% - 542px);
+    		height: 100%;
+			float: left;
+			padding-left: 20px;
+
+			.project-name {
+				color: #000000;
+				font-size: 25px;
+			}
+		}
+	}
 }

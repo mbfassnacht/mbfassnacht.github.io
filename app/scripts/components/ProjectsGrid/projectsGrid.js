@@ -15,6 +15,7 @@ var ProjectsGrid = React.createClass({
 						return <Project 
 		    				ref={'project'+i}
 		    				name={object.name}
+		    				image={object.image}
 		    				key={i}/>;
 				    }.bind(this))
 				}

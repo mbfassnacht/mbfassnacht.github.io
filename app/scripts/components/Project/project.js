@@ -9,7 +9,14 @@ var Project = React.createClass({
 
 		return (
 		  	<div className="project">
-		  		<p className="project-name">{this.props.name}</p>
+		  		<div className="content-container">
+			  		<div className="image-container">
+			  			<img className="image" src={this.props.image}></img>
+					</div>
+					<div className="info-container">
+			  			<p className="project-name">{this.props.name}</p>
+					</div>
+				</div>
 			</div>
 		);
    	}
