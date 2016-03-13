@@ -1,15 +1,15 @@
 .project {
+	width: 50%;
 	margin-left: 100px;
 	margin-right: 100px;
 	margin-bottom: 20px;
 	font-family: $lato;
+	display: table-cell;
 	.content-container {
-		display: table;
+
 		.image-container {
-			display: table-cell;
 			min-width: 522px;
     		height: 100%;
-			float: left;
 			.image {
     			max-width: 100%;
 			}

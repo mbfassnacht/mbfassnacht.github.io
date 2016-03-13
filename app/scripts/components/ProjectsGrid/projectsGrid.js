@@ -12,11 +12,18 @@ var ProjectsGrid = React.createClass({
 		  	<div className="projects-grid">
 		  		{
 				  	model.projects.map(function(object, i){
-						return <Project 
-		    				ref={'project'+i}
-		    				name={object.name}
-		    				image={object.image}
-		    				key={i}/>;
+				  		return (<div className="project-row">
+					  		{
+						  		object.map(function(project, i){
+									return (<Project 
+					    				ref={'project'+i}
+					    				name={project.name}
+					    				image={project.image}
+					    				key={i}/>);
+						  		})
+					  		}
+						</div>);
+
 				    }.bind(this))
 				}
 			</div>
