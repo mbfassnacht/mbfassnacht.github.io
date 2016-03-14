@@ -37,6 +37,7 @@ var Project = React.createClass({
 	handleMouseLeave: function() {
 		if (!this.isAnimating) {
 			this.isAnimating = true;
+			this.requestedAnimateOut = false;
 
 			TweenMax.staggerFromTo(this.reverseAnimateArray, 0.4, {autoAlpha: 1, y:0}, {autoAlpha: 0, y:15, ease: Expo.easeOut}, 0.2);
 			TweenMax.to(this.hoverContainer, 0.4, {delay: 0.6, autoAlpha: 0, ease: Expo.easeOut, onComplete: function(){
