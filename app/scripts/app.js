@@ -1,5 +1,5 @@
 var React = require('react');
-var Landing = require('./components/Landing/landing');
+var Menu = require('./components/Menu/menu');
 var Preload = require('react-preload').Preload;
 
 var App = React.createClass({
@@ -37,7 +37,10 @@ var App = React.createClass({
       resolveOnError={true}
       mountChildren={true}
       >
-        {this.props.children}
+        <div>
+          <Menu></Menu>
+          {this.props.children}
+        </div>
     </Preload>
     );
 

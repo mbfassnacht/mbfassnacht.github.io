@@ -2,7 +2,6 @@ var React = require('react');
 var ReactDOM = require('react-dom');
 var model = require('./projectsPreview-model');
 var TweenMax = require('gsap');
-var THREE = require('three');
 var Link = require('react-router').Link;
 
 var ProjectsPreview = React.createClass({

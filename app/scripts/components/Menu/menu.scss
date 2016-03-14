@@ -1,0 +1,48 @@
+.menu {
+	font-family: $lato;
+	position: fixed;
+    height: 100%;
+    z-index: 10000;
+ 	.opener {
+		position: absolute;
+	    top: 30px;
+	    left: 30px;
+	    z-index: 100000;
+	    color: white;
+	    width: 60px;
+	    text-align: center;
+	    border: 3px solid #ffffff;
+	    padding: 10px;
+	    font-size: 20px;
+	    font-weight: bolder;
+	    cursor: pointer;
+ 	}
+
+ 	.real-menu {
+ 		position: absolute;
+ 		width: 0px;
+ 		top:0px;
+ 		background-color: #000000;
+ 		height: 100%;
+ 		color: #ffffff;
+ 		.list {
+ 			position: relative;
+ 			top: 100px;
+    		text-align: center;
+    		font-size: 30px;
+
+ 			.link {
+ 				visibility: hidden;
+ 				text-transform: uppercase;
+ 				padding-top: 20px;
+    			padding-bottom: 20px;
+    			border-bottom: 1px solid #ffffff;
+    			width: 200px;
+    			margin-left: auto;
+    			margin-right: auto;
+    			cursor: pointer;
+ 			}
+ 		}
+ 	}
+	
+}

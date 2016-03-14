@@ -2,7 +2,6 @@ var React = require('react');
 var ReactDOM = require('react-dom');
 var model = require('./aboutPreview-model');
 var TweenMax = require('gsap');
-var THREE = require('three');
 var About = require('../About/About');
 var AboutPreview = React.createClass({
 
