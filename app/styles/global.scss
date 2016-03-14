@@ -19,3 +19,7 @@ body{
   z-index: 9999;
   background: url('../assets/images/page-loader.gif') 50% 50% no-repeat rgb(245,0,0);
 }
+
+.hidden-container{
+  display: none;
+}

@@ -6,14 +6,47 @@
 	font-family: $lato;
 	display: table-cell;
 	.content-container {
-
+		position: relative;
 		.image-container {
     		height: 100%;
+    		cursor: pointer;
 			.image {
     			max-width: 100%;
 			}
 		}
+		.hover-container {
+			overflow: scroll;
+			height: calc(100% - 20px);
+			width: calc(100% - 20px);
+			z-index: 100;
+			background-color: rgba(0, 0, 0, 0.6);
+			position: absolute;
+			top: 0px;
+			visibility: hidden;
+			opacity: 0;
+			color: #ffffff;
+			padding: 10px;
+			.project-name {
+				font-size: 30px;
+				visibility: hidden;
+			}
+			.project-client {
+				visibility: hidden;
+			}
+			.project-description {
+				margin-top: 20px;
+				margin-bottom: 20px;
+				visibility: hidden;
 
+			}
+			.project-skills {
+				visibility: hidden;
+
+				.techno-title {
+				
+				}
+			}
+		}
 	}
 
 	@media (max-width: 800px) {
