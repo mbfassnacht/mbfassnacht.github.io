@@ -7,6 +7,17 @@
 	top: 0;
 	width: 100%;
 	visibility: hidden;
+	.close-icon {
+		z-index: 100000;
+		position: absolute;
+		right: 30px;
+		top: 40px;
+		svg {
+		    width: 30px;
+		    height: 30px;
+		}
+	}
+
 	.scroll-container {
   		text-align: center;
 	 	margin-top: 50px;

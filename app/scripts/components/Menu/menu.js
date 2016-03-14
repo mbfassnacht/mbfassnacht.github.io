@@ -3,6 +3,7 @@ var ReactDOM = require('react-dom');
 var model = require('./menu-model');
 var TweenMax = require('gsap');
 var Link = require('react-router').Link;
+var Close = require('../Close/close');
 
 var Menu = React.createClass({
 
@@ -14,17 +15,12 @@ var Menu = React.createClass({
 		this.opener = this.refs.opener;
 		this.opened = false;
 		this.isAnimating = false;
+		
 		this.opener.addEventListener('click', function() {
-			if (this.opened) {
-				this.close();
-			} else {
+			if (!this.opened) {
 				this.open();
 			}
 		}.bind(this));
-	},
-
-	closeHandler: function(value) {
-		this.hide();
 	},
 
 	open: function() {
@@ -35,6 +31,7 @@ var Menu = React.createClass({
 				this.opened = true;
 				this.isAnimating = false;
 			}.bind(this));
+			this.refs.close.animateIn();
 
 			TweenMax.fromTo(this.contactTitle, 0.4,{autoAlpha: 0}, {delay: 0.6, autoAlpha: 1});
 
@@ -45,15 +42,12 @@ var Menu = React.createClass({
 		if (this.opened && !this.isAnimating) {
 			this.isAnimating = true;
 			TweenMax.fromTo(this.contactTitle, 0.4,{autoAlpha: 1}, {delay: 0.3, autoAlpha: 0});
-
-			TweenMax.staggerTo(this.links, 0.2, { autoAlpha: 0}, 0.1, function(){
-				this.opened = true;
-				this.isAnimating = false;
-			}.bind(this));
+			TweenMax.staggerTo(this.links, 0.2, { autoAlpha: 0}, 0.1);
 			TweenMax.to(this.refs.menu, 0.4, { delay:1, width: 0, onComplete: function(){
 				this.opened = false;
 				this.isAnimating = false;
 			}.bind(this)});
+			this.refs.close.animateOut();
 		}
 
 	},
@@ -63,6 +57,9 @@ var Menu = React.createClass({
 			<div className="menu">
 				<div ref={'opener'} className="opener">{model.title}</div>
 				<div ref={'menu'} className="real-menu">
+					<div className="close-icon">
+						<Close ref={'close'} onClicked={this.close} ></Close>
+					</div>
 					<div className="list">
 					{
 					  	model.links.map(function(object, i){
@@ -80,7 +77,7 @@ var Menu = React.createClass({
 						{
 						  	model.contact.links.map(function(object, i){
 								return <div key={i} className="link">
-									<a href={object.href} target="_blank">
+									<a href={object.href} className="link" target="_blank">
 										<p className="link-name">{object.title}</p>
 									</a>
 								</div>;

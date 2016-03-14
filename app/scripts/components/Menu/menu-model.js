@@ -1,5 +1,6 @@
 module.exports = {
 	'title': 'MB',
+	'closeIcon': './assets/images/close.svg',
 	'links': [
 		{
 			title:'Home',

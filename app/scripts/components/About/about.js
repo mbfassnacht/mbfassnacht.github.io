@@ -21,6 +21,7 @@ var About = React.createClass({
 	hide: function() {
 		TweenMax.to(this.container, 0.4, {autoAlpha: 0, zIndex: -100});
 		TweenMax.set(this.body, {overflow: 'auto'});
+		this.refs.close.animateOut();
 	},
 
 	show: function() {
@@ -28,12 +29,15 @@ var About = React.createClass({
 		TweenMax.set(this.body, {overflow: 'hidden'});
 		var height = window.innerHeight - 50 + 'px';
 		TweenMax.set(this.scrollContainer, {height: height});
+		this.refs.close.animateIn();
 	},
 
 	render: function() {
 		return (
 			<div className="about">
-				<Close onClicked={this.closeHandler} ></Close>
+				<div className="close-icon">
+					<Close ref={'close'} onClicked={this.closeHandler} ></Close>
+				</div>
 				<div className="scroll-container">
 					<div className="title">{model.title}</div>
 					<div className="description">

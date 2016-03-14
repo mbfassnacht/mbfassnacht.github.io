@@ -1,3 +1,3 @@
 module.exports = {
-	'closeIcon': './assets/images/cross.svg',
+	'closeIcon': './assets/images/close.svg'
 };

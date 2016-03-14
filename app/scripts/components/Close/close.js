@@ -29,6 +29,15 @@ var Close = React.createClass({
 
 	},
 
+	animateIn: function(){
+		TweenMax.to(this.container, 0.4, {delay: 0.4, autoAlpha: 1, ease: Expo.easeOut});
+
+	},
+
+	animateOut: function(){
+		TweenMax.to(this.container, 0.4, {delay: 0.4, autoAlpha: 0, ease: Expo.easeOut});
+	},
+
 	render: function() {
 		return (
 			<div className="close" onMouseDown={this.handleMouseDown} onMouseEnter={this.handleMouseEnter} onMouseLeave={this.handleMouseLeave}>
