@@ -2,10 +2,9 @@ var React = require('react');
 var ReactDOM = require('react-dom');
 var model = require('./about-model');
 var TweenMax = require('gsap');
-var THREE = require('three');
 var Close = require('../Close/close');
 
-var AboutPreview = React.createClass({
+var About = React.createClass({
 
 	componentDidMount: function() {
 		this.container = ReactDOM.findDOMNode(this);
@@ -60,4 +59,4 @@ var AboutPreview = React.createClass({
 	}
 });
 
-module.exports = AboutPreview;
+module.exports = About;

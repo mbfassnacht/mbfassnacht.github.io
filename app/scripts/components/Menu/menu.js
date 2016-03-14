@@ -2,13 +2,15 @@ var React = require('react');
 var ReactDOM = require('react-dom');
 var model = require('./menu-model');
 var TweenMax = require('gsap');
-var Close = require('../Close/close');
+var Link = require('react-router').Link;
 
 var Menu = React.createClass({
 
 	componentDidMount: function() {
 		this.container = ReactDOM.findDOMNode(this);
 		this.links = this.container.getElementsByClassName('link');
+		this.contactTitle = this.container.getElementsByClassName('contact-title')[0];
+
 		this.opener = this.refs.opener;
 		this.opened = false;
 		this.isAnimating = false;
@@ -28,22 +30,27 @@ var Menu = React.createClass({
 	open: function() {
 		if (!this.opened && !this.isAnimating) {
 			this.isAnimating = true;
-			TweenMax.to(this.refs.menu, 0.4, {width: 300});
-			TweenMax.staggerTo(this.links, 0.4, { delay:0.4, autoAlpha: 1},0.2, function(){
+			TweenMax.fromTo(this.refs.menu, 0.4,{width: 0}, {width: 300});
+			TweenMax.staggerTo(this.links, 0.2, { delay:0.4, autoAlpha: 1}, 0.1, function(){
 				this.opened = true;
 				this.isAnimating = false;
 			}.bind(this));
+
+			TweenMax.fromTo(this.contactTitle, 0.4,{autoAlpha: 0}, {delay: 0.6, autoAlpha: 1});
+
 		}
 	},
 
 	close: function() {
 		if (this.opened && !this.isAnimating) {
 			this.isAnimating = true;
-			TweenMax.staggerTo(this.links, 0.4, { autoAlpha: 0},0.2, function(){
+			TweenMax.fromTo(this.contactTitle, 0.4,{autoAlpha: 1}, {delay: 0.3, autoAlpha: 0});
+
+			TweenMax.staggerTo(this.links, 0.2, { autoAlpha: 0}, 0.1, function(){
 				this.opened = true;
 				this.isAnimating = false;
 			}.bind(this));
-			TweenMax.to(this.refs.menu, 0.4, { delay:0.8, width: 0, onComplete: function(){
+			TweenMax.to(this.refs.menu, 0.4, { delay:1, width: 0, onComplete: function(){
 				this.opened = false;
 				this.isAnimating = false;
 			}.bind(this)});
@@ -59,12 +66,27 @@ var Menu = React.createClass({
 					<div className="list">
 					{
 					  	model.links.map(function(object, i){
-					    	 
-							return <div key={i} className="link">
-								{object.title}
+							return <div className="link" key={i}>
+								<Link to={object.to} className="link">
+									{object.title}
+								</Link>
 							</div>;
 					    }.bind(this))
 					}
+					</div>
+					<div className="contact-container">
+						<div className="contact-title">{model.contact.title}</div>
+						<div className="contact-list">
+						{
+						  	model.contact.links.map(function(object, i){
+								return <div key={i} className="link">
+									<a href={object.href} target="_blank">
+										<p className="link-name">{object.title}</p>
+									</a>
+								</div>;
+						    }.bind(this))
+						}
+						</div>
 					</div>
 				</div>
 			</div>

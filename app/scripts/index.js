@@ -6,6 +6,7 @@ var Route = require('react-router').Route;
 var IndexRoute = require('react-router').IndexRoute;
 var hashHistory  = require('react-router/lib/hashHistory');
 var Projects = require('./components/Projects/projects');
+var About = require('./components/About/about');
 var Landing = require('./components/Landing/landing');
 
 ReactDOM.render(
