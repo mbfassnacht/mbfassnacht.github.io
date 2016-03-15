@@ -6,14 +6,14 @@ module.exports = {
 				'client': 'Facebook',
 				'image': '../assets/images/projects/internetorg.png',
 				'technologies': 'Javascript, NPM, Gulp, Sass, Handlebars, Wordpress, Vagrant',
-				'description': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. '
+				'description': 'I worked in this project as a Frontend Developer helping the team to make it looks nice for all kind of devices, and I mean all!! We covered also Opera Mini in different devices ans systems.'
 			},
 			{
 				'name': 'Impact Positive',
 				'client': 'NFL',
 				'image': '../assets/images/projects/nfl.png',
 				'technologies': 'Javascript, Vue.js, NPM, Grunt, Less',
-				'description': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. '
+				'description': 'This site was a experience to show what happen before, during and after a NFL Game. The whole site was created with Vue.js as the main framework. We used less as a css precompiler and gsap to perform almost all the animations. For this project I created the NPM module scroll-manager that is a module that resolve scroll to different points of the body with an ease.'
 			}
 		],
 		[
@@ -28,8 +28,8 @@ module.exports = {
 				'name': 'Mustang Customizer',
 				'client': 'Ford',
 				'image': '../assets/images/projects/customizer.png',
-				'technologies': 'Javascript, Node.js, NPM, Gulp, Sass',
-				'description': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. '
+				'technologies': 'Javascript, Node.js, NPM, Gulp, Sass, Three.js, WebGL',
+				'description': 'This site is a car customizer app. The main part of the site was created in WebGL but also has many Dom animation performed with gsap. I worked in the second phase of the project as a Frontend Developer.'
 			}
 		],
 		[
@@ -38,14 +38,14 @@ module.exports = {
 				'client': 'Modiki',
 				'image': '../assets/images/projects/sonsofgallipoli.png',
 				'technologies': 'Javascript, ES6, Babel, NPM, Grunt, Less, Handlebars',
-				'description': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. '
+				'description': 'This project consist in a story telling for the Gallipoli War. Thi site has a particular interesting video player developed in WebGL. I worked in a frontend development team with 3 more developers. With this project we won 3 prices: FWA Site of the Day on November, FWA Mobile of the Day on January, Awwwards Site of the Day.'
 			},
 			{
 				'name': 'BST',
 				'client': 'BST',
 				'image': '../assets/images/projects/bst.png',
 				'technologies': 'Javascript, Vue.js, Stylus, NPM',
-				'description': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. '
+				'description': 'I worked as a Frontend Developer in this project with two more developers creating a DOM game experience for a TV Show.'
 			}
 		],
 		[
