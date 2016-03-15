@@ -60,6 +60,8 @@
 	}
 
 	@media (max-width: 600px) {
+		min-height: 300px;
+		padding-top: 50px;
 		.title {
 			font-size: 25px;
 		}

@@ -43,6 +43,10 @@
 	@media (max-width: 600px) and (orientation: portrait) {
 
 	  	.description-container { 
+		    width: calc(100% - 30px);
+		    padding-left: 15px;
+		    padding-right: 15px;
+
 			.title {
 		    	font-size: 6vw;
 		 	}

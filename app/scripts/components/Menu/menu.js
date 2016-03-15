@@ -11,7 +11,7 @@ var Menu = React.createClass({
 		this.container = ReactDOM.findDOMNode(this);
 		this.links = this.container.getElementsByClassName('link');
 		this.contactTitle = this.container.getElementsByClassName('contact-title')[0];
-
+		this.requestedClose = false;
 		this.opener = this.refs.opener;
 		this.opened = false;
 		this.isAnimating = false;
@@ -21,19 +21,29 @@ var Menu = React.createClass({
 				this.open();
 			}
 		}.bind(this));
+		
+		this.navigationLinks = this.container.getElementsByClassName('navigation-link');
+
+		for (var i = 0; i < this.navigationLinks.length; i++) {	
+			this.navigationLinks[i].addEventListener('click', this.close);
+		}
+
 	},
 
 	open: function() {
 		if (!this.opened && !this.isAnimating) {
 			this.isAnimating = true;
-			TweenMax.fromTo(this.refs.menu, 0.4,{width: 0}, {width: 300});
-			TweenMax.staggerTo(this.links, 0.2, { delay:0.4, autoAlpha: 1}, 0.1, function(){
+			TweenMax.fromTo(this.refs.menu, 0.2,{width: 0}, {width: 300});
+			TweenMax.staggerTo(this.links, 0.2, { delay:0.2, autoAlpha: 1}, 0.1, function(){
 				this.opened = true;
 				this.isAnimating = false;
+				if (this.requestedClose) {
+					this.close();
+				} 
 			}.bind(this));
 			this.refs.close.animateIn();
 
-			TweenMax.fromTo(this.contactTitle, 0.4,{autoAlpha: 0}, {delay: 0.6, autoAlpha: 1});
+			TweenMax.fromTo(this.contactTitle, 0.2,{autoAlpha: 0}, {delay: 0.6, autoAlpha: 1});
 
 		}
 	},
@@ -41,13 +51,16 @@ var Menu = React.createClass({
 	close: function() {
 		if (this.opened && !this.isAnimating) {
 			this.isAnimating = true;
-			TweenMax.fromTo(this.contactTitle, 0.4,{autoAlpha: 1}, {delay: 0.3, autoAlpha: 0});
+			this.requestedClose = false;
+			TweenMax.fromTo(this.contactTitle, 0.2,{autoAlpha: 1}, {delay: 0.4, autoAlpha: 0});
 			TweenMax.staggerTo(this.links, 0.2, { autoAlpha: 0}, 0.1);
-			TweenMax.to(this.refs.menu, 0.4, { delay:1, width: 0, onComplete: function(){
+			TweenMax.to(this.refs.menu, 0.2, { delay:1.4, width: 0, onComplete: function(){
 				this.opened = false;
 				this.isAnimating = false;
 			}.bind(this)});
 			this.refs.close.animateOut();
+		} else {
+			this.requestedClose = true;
 		}
 
 	},
@@ -63,7 +76,7 @@ var Menu = React.createClass({
 					<div className="list">
 					{
 					  	model.links.map(function(object, i){
-							return <div className="link" key={i}>
+							return <div className="link navigation-link" key={i}>
 								<Link to={object.to} className="link">
 									{object.title}
 								</Link>

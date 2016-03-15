@@ -101,6 +101,13 @@
  	}
 	
 	@media (max-width: 600px){
+		.opener {
+			left: 15px;
+			top: 15px;
+		}
+		.close-icon {
+			top: 25px;
+		}
 		.real-menu {
 			.list {
     			font-size: 23px;
