@@ -33,14 +33,16 @@ var Menu = React.createClass({
 	open: function() {
 		if (!this.opened && !this.isAnimating) {
 			this.isAnimating = true;
-			TweenMax.fromTo(this.refs.menu, 0.2,{width: 0}, {width: 300});
-			TweenMax.staggerTo(this.links, 0.2, { delay:0.2, autoAlpha: 1}, 0.1, function(){
-				this.opened = true;
-				this.isAnimating = false;
-				if (this.requestedClose) {
-					this.close();
-				} 
-			}.bind(this));
+			TweenMax.fromTo(this.refs.menu, 0.2,{width: 0}, {width: 300, onComplete: function(){
+				TweenMax.staggerTo(this.links, 0.2, { autoAlpha: 1}, 0.1, function(){
+					this.opened = true;
+					this.isAnimating = false;
+					if (this.requestedClose) {
+						this.close();
+					} 
+				}.bind(this));			
+			}.bind(this)});
+
 			this.refs.close.animateIn();
 
 			TweenMax.fromTo(this.contactTitle, 0.2,{autoAlpha: 0}, {delay: 0.6, autoAlpha: 1});

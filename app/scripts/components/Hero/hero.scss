@@ -64,6 +64,17 @@
 			}
 		}
 	}
+
+	@media (max-width: 800px) and (orientation: landscape) {
+		.container {
+			.name {
+				font-size: 50px;
+			}
+			.job {
+				font-size: 20px;
+			}
+		}
+	}
 }
 
 

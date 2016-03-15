@@ -58,17 +58,20 @@
 		  	}
 		}
 	}
-	@media (max-width: 600px) and (orientation: landscape) {
+	@media (max-width: 800px) and (orientation: landscape) {
 
 	  	.description-container { 
 			.title {
-		    	font-size: 6vh;
+				padding-top: 5px;
+		    	font-size: 3vw;
 		 	}
 		 	.sub-title {
-				font-size: 4vh;
+				font-size: 2vw;
+				padding-bottom: 5px;
+
 			}
 			.description {
-		    	font-size: 4vh;
+		    	font-size: 2vw;
 		  	}
 		}
 	}

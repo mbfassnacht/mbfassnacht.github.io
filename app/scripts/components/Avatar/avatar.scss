@@ -27,14 +27,14 @@
 			width: 50vw;
 		}
 	}
-	@media (max-width: 600px) and (orientation: landscape) {
+	@media (max-width: 800px) and (orientation: landscape) {
 
-		height: 30vh;
-		width: 30vh;
+		height: 30vw;
+		width: 30vw;
 	  	
 	  	img {
-			height: 30vh;
-			width: 30vh;
+			height: 30vw;
+			width: 30vw;
 		}
 	}
  }
