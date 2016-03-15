@@ -5,7 +5,7 @@ module.exports = {
 				'name': 'Internet.org',
 				'client': 'Facebook',
 				'image': '../assets/images/projects/internetorg.png',
-				'technologies': 'Javascript, NPM, Gulp, Sass, Wordpress, Vagrant',
+				'technologies': 'Javascript, NPM, Gulp, Sass, Handlebars, Wordpress, Vagrant',
 				'description': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. '
 			},
 			{
@@ -37,7 +37,7 @@ module.exports = {
 				'name': 'Sons of Gallipoli',
 				'client': 'Modiki',
 				'image': '../assets/images/projects/sonsofgallipoli.png',
-				'technologies': 'Javascript, ES6, Babel, NPM, Grunt, Less',
+				'technologies': 'Javascript, ES6, Babel, NPM, Grunt, Less, Handlebars',
 				'description': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. '
 			},
 			{
@@ -61,7 +61,7 @@ module.exports = {
 				'client': 'BPS',
 				'image': '../assets/images/projects/apia.png',
 				'technologies': 'Javascript, Java, SQL, BPM',
-				'description': 'I worked as a developer in this project for 2 years, with 2 more collegues. My role in this team was to as a developer and analyst, being one of the touch point with the client. The piece of software that we created involved all the process that an ITIL solution should have: Event Management, Access Management, Request Fulfillment, Problem Management, Incident Management.'
+				'description': 'I worked as a developer in this project for 2 years, with 2 more teammates. My role in this team was to as a developer and analyst, being one of the touch point with the client. The piece of software that we created involved all the process that an ITIL solution should have: Event Management, Access Management, Request Fulfillment, Problem Management, Incident Management.'
 			}	
 		]
 	],
