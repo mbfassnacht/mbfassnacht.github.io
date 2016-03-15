@@ -9,7 +9,7 @@ var App = React.createClass({
   		"../assets/images/header.png",
   		"../assets/images/profile.png",
       "../assets/images/arrow.png",
-      "../assets/images/cross.svg",
+      "../assets/images/close.svg",
       "../assets/images/signature.png",
   		"../assets/images/contact/email.png",
   		"../assets/images/contact/github.png",

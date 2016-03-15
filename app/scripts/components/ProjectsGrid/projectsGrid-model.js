@@ -54,7 +54,7 @@ module.exports = {
 				'client': 'K12',
 				'image': '../assets/images/projects/k12.png',
 				'technologies': 'Javascript, Java, SQL',
-				'description': 'I worked in this e-learning system for 2 years. I started working as a Java Developer but some months later I choose to move to frontend and since there I worked always in frontend. K12 is a hug application with many platforms, so we worked in small teams developing differents parts of the system. My last month in k12 I worked as a team leader of one of this teams.'
+				'description': 'I worked in this e-learning system for 2 years. I started working as a Java Developer but some months later I choose to move to frontend and since there I worked always in frontend. K12 is a huge application with many platforms, so we worked in small teams developing differents parts of the system. My last month in k12 I worked as a team leader of one of this teams.'
 			},
 			{
 				'name': 'Apia ITIL',
