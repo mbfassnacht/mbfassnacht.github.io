@@ -10,7 +10,6 @@ var App = React.createClass({
   		"../assets/images/profile.png",
       "../assets/images/arrow.png",
       "../assets/images/close.svg",
-      "../assets/images/signature.png",
   		"../assets/images/contact/email.png",
   		"../assets/images/contact/github.png",
   		"../assets/images/contact/linkedin.png",
