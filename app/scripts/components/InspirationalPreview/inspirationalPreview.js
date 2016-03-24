@@ -1,6 +1,6 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
-var model = require('./inspirational-model');
+var model = require('./inspirationalPreview-model');
 var TweenMax = require('gsap');
 var Link = require('react-router').Link;
 

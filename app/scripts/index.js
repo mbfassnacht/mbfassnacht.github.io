@@ -15,6 +15,7 @@ ReactDOM.render(
 		<Route name="app" path="/" component={App}>
 		    <IndexRoute name="home" component={Landing}/>
 			<Route name="projects" path="projects" component={Projects}/>
+			<Route name="inspirational-stuff" path="inspirational-stuff" component={Inspirational}/>
 		</Route>
 	</Router>,
 	document.getElementById('app-container')

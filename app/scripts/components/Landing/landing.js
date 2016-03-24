@@ -4,8 +4,8 @@ var Hero = require('../Hero/hero');
 var DescriptionCanvas = require('../DescriptionCanvas/descriptionCanvas');
 var ProjectsPreview = require('../ProjectsPreview/projectsPreview');
 var AboutPreview = require('../AboutPreview/aboutPreview');
+var InspirationalPreview = require('../InspirationalPreview/inspirationalPreview');
 var ScrollManager = require('scroll-manager');
-
 var Contact = require('../Contact/contact');
 
 var Landing = React.createClass({
@@ -26,6 +26,7 @@ var Landing = React.createClass({
           <Hero ref={'hero'}></Hero>
           <DescriptionCanvas ref={'descriptionCanvas'}></DescriptionCanvas>
           <ProjectsPreview></ProjectsPreview>
+          <InspirationalPreview></InspirationalPreview>
           <AboutPreview></AboutPreview>
           <Contact></Contact>
         </div>

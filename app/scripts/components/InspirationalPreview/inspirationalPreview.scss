@@ -1,6 +1,6 @@
  .inspirational-preview {
  	min-height: $section-min-height;
-	background-color: $sky-blue;
+	background-color: $cool-orange;
 	position: relative;
 	color: #ffffff;
 	.container {
@@ -10,9 +10,9 @@
 	    top: 50%;
 		left: 50%;
 		cursor: pointer;
-		width: 100vw;
+		width: 80vw;
 		.title {
-			font-size: 12vw;
+			font-size: 10vw;
 			font-family: $lato;
 		}
 		.divider {
