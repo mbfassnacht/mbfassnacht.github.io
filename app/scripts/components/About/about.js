@@ -54,9 +54,6 @@ var About = React.createClass({
 						<div className="phrase">"{model.phrase}"</div>
 						<div className="author">{model.author}</div>
 					</div>
-					<div className="signature">
-						<img className="signature-image" src={model.signature}></img>
-					</div>
 				</div>
 			</div>
 		);
