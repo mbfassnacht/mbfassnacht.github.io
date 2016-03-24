@@ -1,9 +1,8 @@
 var React = require('react');
-var model = require('./projects-model');
-var ProjectsGrid = require('../ProjectsGrid/projectsGrid');
+var model = require('./inspirational-model');
 var ScrollManager = require('scroll-manager');
 
-var Projects = React.createClass({
+var Inspirational = React.createClass({
 
   componentDidMount: function() {
     this.scroller =  new ScrollManager();
@@ -12,12 +11,11 @@ var Projects = React.createClass({
 
   render: function() {    
   	return (
-        <div id="projects">
+        <div id="inspirational">
         	<h1 className="title">{model.title}</h1>
-        	<ProjectsGrid></ProjectsGrid>
         </div>
       );
     }
 });
 
-module.exports = Projects;
+module.exports = Inspirational;
