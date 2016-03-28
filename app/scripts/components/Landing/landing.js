@@ -26,6 +26,7 @@ var Landing = React.createClass({
           <Hero ref={'hero'}></Hero>
           <DescriptionCanvas ref={'descriptionCanvas'}></DescriptionCanvas>
           <ProjectsPreview></ProjectsPreview>
+          <InspirationalPreview></InspirationalPreview>
           <AboutPreview></AboutPreview>
           <Contact></Contact>
         </div>
