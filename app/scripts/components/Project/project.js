@@ -18,6 +18,12 @@ var Project = React.createClass({
 		this.reverseAnimateArray = [this.skills, this.description, this.client, this.name];
 		this.isAnimating = false;
 		this.requestedAnimateOut = false;
+
+		window.addEventListener('resize', this.handleResize, true);
+	},
+
+  	handleResize: function() {
+  		this.container.style.width = this.container.parentNode.clientWidth / 2;
 	},
 
   	handleMouseEnter: function() {
