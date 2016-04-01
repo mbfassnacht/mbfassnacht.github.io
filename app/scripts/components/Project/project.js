@@ -20,6 +20,7 @@ var Project = React.createClass({
 		this.requestedAnimateOut = false;
 
 		window.addEventListener('resize', this.handleResize, true);
+		this.handleResize();
 	},
 
   	handleResize: function() {
