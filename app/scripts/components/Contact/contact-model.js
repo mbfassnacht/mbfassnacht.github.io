@@ -1,5 +1,8 @@
 module.exports = {
-
+	'title': 'CONTACT ME',
+	'location': 'Berlin - Germany',
+	'email': 'maximobelen@me.com',
+	'terms': 'Máximo Belén - All Rights Reserved ®',
 	'socials': [
 	 	{
 	 		'ref': 'email',

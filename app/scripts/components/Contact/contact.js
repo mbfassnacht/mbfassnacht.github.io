@@ -31,7 +31,7 @@ var Contact = React.createClass({
 
 		return (
 		  	<div id="contact" className="section contact">
-				<h2 className="title">CONTACT ME</h2>
+				<h2 className="title">{model.title}</h2>
 				<div className="divider"></div>
 
 				<ul className="socials container-fluid">
@@ -48,11 +48,11 @@ var Contact = React.createClass({
 				}
 				</ul>
 				<div className="quick-data">
-					<p>Montevideo - Uruguay</p>
-					<p>maximobelen@me.com</p>
+					<p>{model.location}</p>
+					<p>{model.email}</p>
 				</div>
 				<div className="terms-container">
-					<p>Máximo Belén - All Rights Reserved ®</p>
+					<p>{model.terms}</p>
 				</div>
 			</div>
 		);
