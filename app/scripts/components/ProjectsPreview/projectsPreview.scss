@@ -3,6 +3,7 @@
 	background-color: $sky-blue;
 	position: relative;
 	color: #ffffff;
+
 	.container {
   		text-align: center;
 	  	transform: translateX(-50%) translateY(-50%);
@@ -11,6 +12,7 @@
 		left: 50%;
 		cursor: pointer;
 		width: 100vw;
+		
 		.title {
 			font-size: 10vw;
 			font-family: $lato;
