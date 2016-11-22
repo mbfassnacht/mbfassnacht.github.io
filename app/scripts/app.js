@@ -22,7 +22,9 @@ var App = React.createClass({
       "../assets/images/projects/internetorg.png",
       "../assets/images/projects/k12.png",
       "../assets/images/projects/nfl.png",
-      "../assets/images/projects/sonsofgallipoli.png"
+      "../assets/images/projects/sonsofgallipoli.png",
+      "../assets/images/projects/audi.png",
+      "../assets/images/projects/datacenter.png",
   	];
 
   	var loadingIndicator = (<div className="loader"></div>);
