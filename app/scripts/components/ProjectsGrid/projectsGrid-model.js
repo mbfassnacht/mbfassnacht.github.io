@@ -2,6 +2,22 @@ module.exports = {
 	'projects': [
 		[
 			{
+				'name': 'Audi VMRS',
+				'client': 'Audi',
+				'image': '../assets/images/projects/audi.png',
+				'technologies': 'Javascript, NPM, Grunt, CSS3, Twig, AngularJS, SASS, Bower',
+				'description': 'I´m working in this project as a Frontend Developer. This project include 3 apps, one for iPad created with AngularJS and builded as a native app with Ionic, another one for Chromebox and the last one is a web app for the Browser.'
+			},
+			{
+				'name': 'Data Center Murals',
+				'client': 'Google',
+				'image': '../assets/images/projects/datacenter.png',
+				'technologies': 'Javascript, BigWheel, Handlebars, Grunt, Less, Gsap',
+				'description': 'This site was a experience to present Google Data Centers. The whole site was created with powerfull Animations and Javascript stuff.'
+			}
+		],
+		[
+			{
 				'name': 'Internet.org',
 				'client': 'Facebook',
 				'image': '../assets/images/projects/internetorg.png',
@@ -21,7 +37,7 @@ module.exports = {
 				'name': 'Buenavianda',
 				'client': 'Buenavianda',
 				'image': '../assets/images/projects/buenavianda.png',
-				'technologies': 'Javascript, Node.js, Angular, NPM, Gulp, Sass',
+				'technologies': 'Javascript, Node.js, AngularJS, NPM, Gulp, Sass',
 				'description': 'I worked in this project as a freelance, helping two other guys to develop the frontend side of the project. The site is completely build in Angular.'
 			},
 			{
