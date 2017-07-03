@@ -1,12 +1,12 @@
 module.exports = {
 	'title': 'CONTACT ME',
 	'location': 'Berlin - Germany',
-	'email': 'maximobelen@me.com',
+	'email': 'hello@maximobelen.com',
 	'terms': 'Máximo Belén - All Rights Reserved ®',
 	'socials': [
 	 	{
 	 		'ref': 'email',
-	 		'href': 'mailto:maximobelen@me.com',
+	 		'href': 'mailto:hello@maximobelen.com',
 	 		'img': './assets/images/contact/email.png',
 	 		'title': 'EMAIL',
 	 		'color': '#510000'
