@@ -40,7 +40,7 @@ class DescriptionCanvas extends React.Component {
 		this.scene = new THREE.Scene();
 		this.scene.fog = new THREE.FogExp2( 0x000000, 0.001 );
 		this.geometry = new THREE.Geometry();
-		this.sprite = new THREE.TextureLoader().load( "../images/disc.png" );
+		this.sprite = new THREE.TextureLoader().load( '../images/disc.png' );
 		for ( var i = 0; i < 10000; i ++ ) {
 			var vertex = new THREE.Vector3();
 			vertex.x = 2000 * Math.random() - 1000;
