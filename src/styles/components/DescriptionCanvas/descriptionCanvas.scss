@@ -1,0 +1,80 @@
+@import "../../_globals.scss";
+
+.description-canvas {
+	margin-top: 0px;
+	z-index: 1;
+	min-height: $section-min-height;
+	background-color: #b4b4b4;
+	text-align: center;
+	color: white;
+	font-family: 'Raleway', Helvetica, Arial, sans-serif;
+	position: relative;
+	.description-container {
+	    max-width: 800px;
+	    margin: 0 auto;
+  		text-align: center;
+	  	transform: translateX(-50%) translateY(-50%);
+	    position: absolute;
+	    top: 50%;
+		left: 50%;
+    	.title {
+			padding-top: 20px;
+			font-weight: 800;
+			font-size: 40px;
+		}
+
+    	.sub-title {
+			font-size: 20px;
+			padding-bottom: 20px;
+			color: white;
+		}
+
+		.description {
+			font-size: 18px;
+			font-weight: 100;
+			color: white;
+
+		}
+	}
+
+	#canvas-container {
+		position: absolute;
+		width: 100%;
+	}
+
+	@media (max-width: 600px) and (orientation: portrait) {
+
+	  	.description-container {
+		    width: calc(100% - 30px);
+		    padding-left: 15px;
+		    padding-right: 15px;
+
+			.title {
+		    	font-size: 9vw;
+		 	}
+		 	.sub-title {
+				font-size: 6vw;
+			}
+			.description {
+		    	font-size: 5vw;
+		  	}
+		}
+	}
+	@media (max-width: 800px) and (orientation: landscape) {
+
+	  	.description-container {
+			.title {
+				padding-top: 5px;
+		    	font-size: 3vw;
+		 	}
+		 	.sub-title {
+				font-size: 2vw;
+				padding-bottom: 5px;
+
+			}
+			.description {
+		    	font-size: 2vw;
+		  	}
+		}
+	}
+}
