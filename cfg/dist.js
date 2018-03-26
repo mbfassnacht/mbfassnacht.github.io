@@ -10,7 +10,9 @@ let defaultSettings = require('./defaults');
 let BowerWebpackPlugin = require('bower-webpack-plugin');
 
 let config = Object.assign({}, baseConfig, {
-  entry: path.join(__dirname, '../src/index'),
+  entry: [
+    './src/scripts/index'
+  ],
   cache: false,
   devtool: 'sourcemap',
   plugins: [

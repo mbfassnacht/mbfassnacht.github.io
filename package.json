@@ -8,7 +8,7 @@
   "scripts": {
     "clean": "rimraf dist/*",
     "copy": "copyfiles -f ./src/index.html ./src/favicon.ico ./src/CNAME ./dist",
-    "assets": "copyfiles -f ./src/images/* ./dist/images/",
+    "assets": "cp -R ./src/images ./dist",
     "dist": "npm run copy & webpack --env=dist & npm run assets",
     "lint": "eslint ./src",
     "posttest": "npm run lint",
@@ -33,6 +33,7 @@
     "babel-preset-stage-0": "^6.5.0",
     "bower-webpack-plugin": "^0.1.9",
     "chai": "^3.2.0",
+    "copy-dir": "^0.3.0",
     "copyfiles": "^1.0.0",
     "css-loader": "^0.23.0",
     "eslint": "^3.0.0",
