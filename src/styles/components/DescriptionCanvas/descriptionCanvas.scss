@@ -4,11 +4,18 @@
 	margin-top: 0px;
 	z-index: 1;
 	min-height: $section-min-height;
-	background-color: #b4b4b4;
 	text-align: center;
 	color: white;
 	font-family: 'Raleway', Helvetica, Arial, sans-serif;
 	position: relative;
+
+	&.mobile {
+		background: url("../../../images/mobile-background.png") no-repeat;
+		background-size: cover;
+		position: absolute;
+		width: 100%;
+	}
+
 	.description-container {
 	    max-width: 800px;
 	    margin: 0 auto;

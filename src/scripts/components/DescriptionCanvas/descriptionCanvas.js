@@ -11,9 +11,14 @@ class DescriptionCanvas extends React.Component {
 
 	componentDidMount() {
 		this.container = ReactDOM.findDOMNode(this);
-		this.initCanvas();
 		this.scrollListener = this.onScroll.bind(this);
 		window.addEventListener('scroll', this.scrollListener, true);
+
+		if (!window.WebGLRenderingContext) {
+			this.container.className += ' mobile';
+		} else {
+			this.initCanvas();
+		}
 	}
 
 	componentWillUnmount() {
