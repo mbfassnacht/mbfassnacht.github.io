@@ -1,0 +1,30 @@
+@import "../../_globals.scss";
+
+.about-preview {
+ 	min-height: $section-min-height;
+	background-color: $water-green;
+	position: relative;
+	color: #ffffff;
+	z-index: 1000;
+	.container {
+  		text-align: center;
+	  	transform: translateX(-50%) translateY(-50%);
+	    position: absolute;
+	    top: 50%;
+		left: 50%;
+		cursor: pointer;
+		width: 100vw;
+
+		.title {
+			font-size: 10vw;
+			font-family: $lato;
+		}
+		.divider {
+			width: 10%;
+			height: 1.5vw;
+			background-color: #ffffff;
+			margin: 0 auto;
+		}
+	}
+
+}
