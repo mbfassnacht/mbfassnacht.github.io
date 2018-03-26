@@ -6,7 +6,7 @@ import * as THREE from 'three';
 import Avatar from '../Avatar/avatar';
 
 var model = require('./descriptionCanvas-model');
-
+var mobile = require('is-mobile');
 class DescriptionCanvas extends React.Component {
 
 	componentDidMount() {
@@ -14,23 +14,11 @@ class DescriptionCanvas extends React.Component {
 		this.scrollListener = this.onScroll.bind(this);
 		window.addEventListener('scroll', this.scrollListener, true);
 
-		if (!this.webglAvailable()) {
+		if (mobile()) {
 			this.container.className += ' mobile';
 		} else {
 			this.initCanvas();
 		}
-	}
-
-	webglAvailable() {
-	    try {
-	        var canvas = document.createElement("canvas");
-	        return !!
-	            window.WebGLRenderingContext &&
-	            (canvas.getContext("webgl") ||
-	                canvas.getContext("experimental-webgl"));
-	    } catch(e) {
-	        return false;
-	    }
 	}
 
 	componentWillUnmount() {
