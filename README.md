@@ -1,13 +1,7 @@
 # my-site
 My personal portfolio created with React.  
 
-## INSTALLATION
-
-###GLOBAL GULP
-```javascript
-npm install -g gulp
-```
-### DEPENDENCES
+## INSTALLATION DEPENDENCES
 ```javascript
 npm install
 ```
