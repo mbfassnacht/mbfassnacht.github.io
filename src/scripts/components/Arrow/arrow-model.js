@@ -1,3 +1,3 @@
 module.exports = {
-	'arrow': './images/arrow.png'
+	'arrow': '../assets/images/arrow.png'
 };
