@@ -19,19 +19,19 @@ module.exports = {
 		 		'title': 'EMAIL'
 		 	},
 		 	 {
-		 		'href': 'http://twitter.com/maximobelen',
+		 		'href': 'http://twitter.com/mbfassnacht',
 		 		'title': 'TWITTER'
 		 	},
 		 	{
-		 		'href': 'https://www.npmjs.com/~maximobelen',
+		 		'href': 'https://www.npmjs.com/~mbfassnacht',
 		 		'title': 'NPM'
 		 	},
 		 	{
-		 		'href': 'https://github.com/maximobelen',
+		 		'href': 'https://github.com/mbfassnacht',
 		 		'title': 'GITHUB'
 		 	},
 		 	{
-		 		'href': 'https://uy.linkedin.com/in/maximobelen',
+		 		'href': 'https://uy.linkedin.com/in/mbfassnacht',
 		 		'title': 'LINKEDIN'
 		 	}
 		]
