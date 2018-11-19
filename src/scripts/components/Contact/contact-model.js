@@ -2,7 +2,7 @@ module.exports = {
 	'title': 'CONTACT ME',
 	'location': 'Berlin - Germany',
 	'email': 'hello@maximobelen.com',
-	'terms': 'Máximo Belén - All Rights Reserved ®',
+	'terms': '@mbfassnacht - All Rights Reserved ®',
 	'socials': [
 	 	{
 	 		'ref': 'email',
@@ -13,28 +13,28 @@ module.exports = {
 	 	},
 	 	 {
 	 		'ref': 'twitter',
-	 		'href': 'http://twitter.com/maximobelen',
+	 		'href': 'http://twitter.com/mbfassnacht',
 	 		'img': './images/contact/twitter.png',
 	 		'title': 'TWITTER',
 	 		'color': '#1da1f2'
 	 	},
 	 	{
 	 		'ref': 'npm',
-	 		'href': 'https://www.npmjs.com/~maximobelen',
+	 		'href': 'https://www.npmjs.com/~mbfassnacht',
 	 		'img': './images/contact/npm.png',
 	 		'title': 'NPM',
 	 		'color': '#c12127'
 	 	},
 	 	{
 	 		'ref': 'github',
-	 		'href': 'https://github.com/maximobelen',
+	 		'href': 'https://github.com/mbfassnacht',
 	 		'img': './images/contact/github.png',
 	 		'title': 'GITHUB',
 	 		'color': '#32B200'
 	 	},
 	 	{
 	 		'ref': 'linkedin',
-	 		'href': 'https://uy.linkedin.com/in/maximobelen',
+	 		'href': 'https://uy.linkedin.com/in/mbfassnacht',
 	 		'img': './images/contact/linkedin.png',
 	 		'title': 'LINKEDIN',
 	 		'color': '#23639a'
