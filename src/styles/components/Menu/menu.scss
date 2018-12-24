@@ -50,8 +50,10 @@
  		overflow: scroll;
  		position: absolute;
  		width: 0px;
+		left: -1px;
  		top:0px;
- 		background-color: #383838;
+ 		background-color: $darkGrey;
+		border-right: 1px solid white;
  		height: 100%;
  		.list {
  			position: relative;

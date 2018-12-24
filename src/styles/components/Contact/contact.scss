@@ -1,33 +1,48 @@
 @import "../../_globals.scss";
 
 #contact {
-	background-color: #ffffff;
+	background-color: $darkGrey;
 	min-height: 500px;
 	padding-top: 100px;
 	font-family: $lato;
+	color: white;
 
 	.socials {
-	  list-style: none;
-	  padding-left: 0px;
-	  li {
-	  	text-align: center;
-	  	width: 20%;
-		display: inline-block;
-		a {
-			text-decoration: none;
+		list-style: none;
+		padding-left: 0px;
+		display: flex;
+		justify-content: space-around;
+		.img-container {
+			background-color: white;
+			width: 70px;
+			height: 70px;
+			margin: 0 auto;
+			border-radius: 70px;
+			position: relative;
 		}
-	  	img {
-	  		height: 50px;
-	  		width: 50px;
-	  		cursor: pointer;
+
+		li {
+			text-align: center;
+			display: inline-block;
+			a {
+				text-decoration: none;
+			}
+			img {
+				height: 50px;
+				width: 50px;
+				cursor: pointer;
+				position: absolute;
+				left: 50%;
+				top: 50%;
+				transform: translate(-50%, -50%);
+			}
+			p {
+				color: white;
+				font-size: 16px;
+				font-weight: bold;
+				margin-top: 5px;
+			}
 		}
-		p {
-	  		color: #000000;
-	  		font-size: 16px;
-	  		font-weight: bold;
-	  		margin-top: 5px;
-		}
-	  }
 	}
 
 	.title {
@@ -39,7 +54,7 @@
 	.divider {
 		width: 10%;
 		height: 10px;
-		background-color: #000000;
+		background-color: white;
 		margin-right: auto;
 		margin-left: auto;
 		margin-bottom: 80px;

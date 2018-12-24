@@ -38,7 +38,7 @@ class Contact extends React.Component {
 
 						return <li key={i} ref="{object.ref}" >
 							<a href={object.href} target="_blank" onMouseEnter={this.handleMouseEnter.bind(this, object.color)} onMouseLeave={this.handleMouseLeave.bind(this)}>
-								<img src={object.img}></img>
+								<div className="img-container"><img src={object.img}></img></div>
 								<p className="link-name">{object.title}</p>
 							</a>
 						</li>;
