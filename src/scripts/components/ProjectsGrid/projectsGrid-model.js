@@ -5,8 +5,8 @@ module.exports = {
 				'name': 'Audi VMRS',
 				'client': 'Audi',
 				'image': '../assets/images/projects/audi.png',
-				'technologies': 'Javascript, NPM, Grunt, CSS3, Twig, AngularJS, SASS, Bower',
-				'description': 'I´m working in this project as a Frontend Developer. This project include 3 apps, one for iPad created with AngularJS and builded as a native app with Ionic, another one for Chromebox and the last one is a web app for the Browser.'
+				'technologies': 'Javascript, NPM, Webpack, React, Flux, Grunt, CSS3, AngularJS, SASS',
+				'description': 'I´m working in this project as a Frontend Developer. We are building several REST frontend projects for our client'
 			},
 			{
 				'name': 'Data Center Murals',
