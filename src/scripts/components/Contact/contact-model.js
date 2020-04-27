@@ -11,13 +11,6 @@ module.exports = {
 	 		'title': 'EMAIL',
 	 		'color': '#510000'
 	 	},
-	 	 {
-	 		'ref': 'twitter',
-	 		'href': 'http://twitter.com/mbfassnacht',
-	 		'img': '../assets/images/contact/twitter.png',
-	 		'title': 'TWITTER',
-	 		'color': '#1da1f2'
-	 	},
 	 	{
 	 		'ref': 'npm',
 	 		'href': 'https://www.npmjs.com/~mbfassnacht',
