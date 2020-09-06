@@ -31,8 +31,8 @@ class Arrow extends React.Component {
 
 	render() {
 		return (
-			<div id="arrow" className="white circle-button" onMouseEnter={this.handleMouseEnter.bind(this)} onMouseLeave={this.handleMouseLeave.bind(this)} onMouseDown={this.handleMouseDown.bind(this)}>
-				<img className="image-arrow" src={model.arrow}></img>
+			<div id="arrow" className="white circle-button" onMouseEnter={this.handleMouseEnter.bind(this)} onMouseLeave={this.handleMouseLeave.bind(this)} onClick={this.handleMouseDown.bind(this)}>
+				<img className="image-arrow" src={model.arrow} />
 			</div>
 		);
 	}

@@ -47,7 +47,6 @@ class Contact extends React.Component {
 				</ul>
 				<div className="quick-data">
 					<p>{model.location}</p>
-					<p>{model.email}</p>
 				</div>
 				<div className="terms-container">
 					<p>{model.terms}</p>
