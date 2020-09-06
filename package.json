@@ -37,10 +37,6 @@
     "isparta-instrumenter-loader": "^1.0.0",
     "minimist": "^1.2.5",
     "mocha": "^5.2.0",
-<<<<<<< HEAD
-=======
-    "node-sass": "^4.14.0",
->>>>>>> f5db75527b9e414093208e5762daa319d3917d5d
     "null-loader": "^0.1.1",
     "open": "0.0.5",
     "phantomjs-prebuilt": "^2.0.0",
