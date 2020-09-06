@@ -18,10 +18,6 @@ module.exports = {
 		 		'href': 'mailto:hello@maximobelen.com',
 		 		'title': 'EMAIL'
 		 	},
-		 	 {
-		 		'href': 'http://twitter.com/mbfassnacht',
-		 		'title': 'TWITTER'
-		 	},
 		 	{
 		 		'href': 'https://www.npmjs.com/~mbfassnacht',
 		 		'title': 'NPM'

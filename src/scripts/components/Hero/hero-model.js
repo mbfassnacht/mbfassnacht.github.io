@@ -1,4 +1,4 @@
 module.exports = {
- 'name': 'MÁXIMO BELÉN',
+ 'name': '@mbfassnacht',
  'job': 'FRONTEND ENGINEER'
 };

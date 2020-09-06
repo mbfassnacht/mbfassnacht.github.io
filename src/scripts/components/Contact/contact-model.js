@@ -1,6 +1,6 @@
 module.exports = {
 	'title': 'CONTACT ME',
-	'location': 'Berlin - Germany',
+	'location': 'München - Deutschland',
 	'email': 'hello@maximobelen.com',
 	'terms': '@mbfassnacht - All Rights Reserved ®',
 	'socials': [
@@ -10,13 +10,6 @@ module.exports = {
 	 		'img': '../assets/images/contact/email.png',
 	 		'title': 'EMAIL',
 	 		'color': '#510000'
-	 	},
-	 	 {
-	 		'ref': 'twitter',
-	 		'href': 'http://twitter.com/mbfassnacht',
-	 		'img': '../assets/images/contact/twitter.png',
-	 		'title': 'TWITTER',
-	 		'color': '#1da1f2'
 	 	},
 	 	{
 	 		'ref': 'npm',

@@ -37,7 +37,6 @@
     "isparta-instrumenter-loader": "^1.0.0",
     "minimist": "^1.2.0",
     "mocha": "^5.2.0",
-    "node-sass": "^4.11.0",
     "null-loader": "^0.1.1",
     "open": "0.0.5",
     "phantomjs-prebuilt": "^2.0.0",
@@ -62,6 +61,7 @@
     "history": "^4.7.2",
     "is-mobile": "^0.2.2",
     "load-svg": "^1.0.0",
+    "node-sass": "^4.14.1",
     "normalize.css": "^4.0.0",
     "prop-types": "^15.5.10",
     "react": "^16.6.3",
@@ -73,7 +73,7 @@
     "react-router": "^4.2.0",
     "react-router-dom": "^4.2.2",
     "sass-loader": "^6.0.6",
-    "scroll-manager": "^1.6.2",
+    "scroll-manager": "^1.8.0",
     "superagent": "^3.8.1",
     "three": "^0.91.0"
   }
