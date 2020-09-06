@@ -14,8 +14,10 @@ var workExperience = diff_years(today, startWorking);
 module.exports = {
 	'title': 'about me',
 	'description': [
-		'I\'m @mbfassnacht. I\'m German and oringinally from Uruguay.',
-		'I have been working for the last ' + workExperience + ' years in Web-Development.'
+		'I\'m @mbfassnacht.',
+        'I have been working for the last ' + workExperience + ' years in Web-Development.',
+        'Contact me!.'
+
 	],
 	'phrase': 'Stay Hungry, Stay Foolish',
 	'author': 'Steve Jobs - Stanford 2005',
