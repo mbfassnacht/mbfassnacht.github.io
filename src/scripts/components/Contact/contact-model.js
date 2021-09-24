@@ -6,7 +6,7 @@ module.exports = {
 	'socials': [
 	 	{
 	 		'ref': 'email',
-	 		'href': 'mailto:hello@maximobelen.com',
+	 		'href': 'mailto:mbfassnacht@web.de',
 	 		'img': '../assets/images/contact/email.png',
 	 		'title': 'EMAIL',
 	 		'color': '#510000'
@@ -24,13 +24,6 @@ module.exports = {
 	 		'img': '../assets/images/contact/github.png',
 	 		'title': 'GITHUB',
 	 		'color': '#32B200'
-	 	},
-	 	{
-	 		'ref': 'linkedin',
-	 		'href': 'https://uy.linkedin.com/in/mbfassnacht',
-	 		'img': '../assets/images/contact/linkedin.png',
-	 		'title': 'LINKEDIN',
-	 		'color': '#23639a'
 	 	}
 	]
 };
