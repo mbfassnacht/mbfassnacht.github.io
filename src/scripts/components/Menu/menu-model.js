@@ -15,7 +15,7 @@ module.exports = {
 		title: 'CONTACT ME',
 		links: [
 		 	{
-		 		'href': 'mailto:hello@maximobelen.com',
+		 		'href': 'mailto:mbfassnacht@web.de.com',
 		 		'title': 'EMAIL'
 		 	},
 		 	{
@@ -25,10 +25,6 @@ module.exports = {
 		 	{
 		 		'href': 'https://github.com/mbfassnacht',
 		 		'title': 'GITHUB'
-		 	},
-		 	{
-		 		'href': 'https://uy.linkedin.com/in/mbfassnacht',
-		 		'title': 'LINKEDIN'
 		 	}
 		]
 	}
