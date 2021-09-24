@@ -12,7 +12,6 @@ class App extends React.Component {
             '../assets/images/close.svg',
             '../assets/images/contact/email.png',
             '../assets/images/contact/github.png',
-            '../assets/images/contact/linkedin.png',
             '../assets/images/contact/npm.png',
             '../assets/images/contact/twitter.png',
             '../assets/images/projects/apia.png',
