@@ -15,7 +15,7 @@ module.exports = {
 		title: 'CONTACT ME',
 		links: [
 		 	{
-		 		'href': 'mailto:mbfassnacht@web.de.com',
+		 		'href': 'mailto:mbfassnacht@web.de',
 		 		'title': 'EMAIL'
 		 	},
 		 	{
