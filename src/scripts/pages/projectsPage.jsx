@@ -2,7 +2,7 @@ require('normalize.css/normalize.css');
 require('../../styles/App.scss');
 require('../../styles/pages/projectsPage.scss');
 import React from 'react';
-import ProjectsGrid from '../components/projectsGrid/ProjectsGrid.jsx';
+import ProjectsGrid from '../components/ProjectsGrid/ProjectsGrid.jsx';
 
 class ProjectsPage extends React.Component {
 
