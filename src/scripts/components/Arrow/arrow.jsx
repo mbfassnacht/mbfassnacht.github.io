@@ -1,10 +1,9 @@
 require('../../../styles/components/Arrow/arrow.scss');
-
-var React = require('react');
-var ReactDOM = require('react-dom');
-var model = require('./arrow-model');
-var TweenMax = require('gsap');
-var ScrollManager = require('scroll-manager');
+import React from 'react';
+import ReactDOM  from'react-dom';
+import model from './arrow-model';
+import { TweenMax } from 'gsap';
+import ScrollManager from 'scroll-manager';
 
 class Arrow extends React.Component {
 
@@ -12,9 +11,8 @@ class Arrow extends React.Component {
 		this.hidden = false;
 		this.scroller =  new ScrollManager();
 		this.container = ReactDOM.findDOMNode(this);
-  		TweenMax.to(this.container, 0.4, {delay:0.8, autoAlpha: 1});
-  		this.image = this.container.getElementsByClassName('image-arrow')[0];
-
+  	TweenMax.to(this.container, 0.4, {delay:0.8, autoAlpha: 1});
+  	this.image = this.container.getElementsByClassName('image-arrow')[0];
 	}
 
 	handleMouseDown() {
