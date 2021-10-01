@@ -7,7 +7,7 @@ class App extends React.Component {
     render() {
         var images = [
             '../assets/images/header.png',
-            '../assets/images/profile.png',
+            '../assets/images/avatar.png',
             '../assets/images/arrow.png',
             '../assets/images/close.svg',
             '../assets/images/contact/email.png',
