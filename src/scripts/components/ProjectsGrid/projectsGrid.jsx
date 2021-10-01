@@ -7,6 +7,7 @@ var model = require('./projectsGrid-model');
 
 class ProjectsGrid extends React.Component {
 
+  
 	render() {
 
 		return (

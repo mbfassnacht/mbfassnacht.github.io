@@ -6,6 +6,7 @@ import TweenMax from 'gsap';
 import About from '../About/About.jsx';
 var model = require('./aboutPreview-model');
 
+
 class AboutPreview extends React.Component {
 
 	componentDidMount() {
