@@ -61,7 +61,7 @@
     "history": "^4.7.2",
     "is-mobile": "^0.2.2",
     "load-svg": "^1.0.0",
-    "node-sass": "^6.0.1",
+    "node-sass": "^7.0.0",
     "normalize.css": "^4.0.0",
     "prop-types": "^15.5.10",
     "react": "^16.6.3",
