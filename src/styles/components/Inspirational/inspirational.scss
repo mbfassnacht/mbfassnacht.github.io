@@ -1,20 +1,20 @@
 #inspirational {
-	background-color: #999999;
-	min-height: 100vh;
-	font-family: $inter;
-	padding-bottom: 20px;
+  background-color: #999999;
+  min-height: 100vh;
+  font-family: $inter;
+  padding-bottom: 20px;
 
-	.title {
-		margin-top: 0;
-    	padding-top: 40px;
-		color: #ffffff;
-		text-align: center;
-		font-size: 6vw;
-	}
+  .title {
+    margin-top: 0;
+    padding-top: 40px;
+    color: #ffffff;
+    text-align: center;
+    font-size: 6vw;
+  }
 
-	@media (max-width: 800px) {
-		.title {
-			font-size: 35px;
-		}
-	}
+  @media (max-width: 800px) {
+    .title {
+      font-size: 35px;
+    }
+  }
 }

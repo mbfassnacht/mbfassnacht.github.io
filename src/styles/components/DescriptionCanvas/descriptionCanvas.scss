@@ -1,91 +1,91 @@
-@import "../../_globals.scss";
+@use "../../_globals.scss" as *;
 
 .description-canvas {
-	margin-top: 0px;
-	z-index: 1;
-	min-height: $section-min-height;
-	text-align: center;
-	color: $text-primary;
-	font-family: $inter;
-	position: relative;
-	background-color: $bg-white;
+  margin-top: 0px;
+  z-index: 1;
+  min-height: $section-min-height;
+  text-align: center;
+  color: $text-primary;
+  font-family: $inter;
+  position: relative;
+  background-color: $bg-white;
 
-	&.mobile {
-		background-color: $bg-light;
-		width: 100%;
-	}
+  &.mobile {
+    background-color: $bg-light;
+    width: 100%;
+  }
 
-	.description-container {
-	    max-width: 800px;
-	    margin: 0 auto;
-  		text-align: center;
-	  	transform: translateX(-50%) translateY(-50%);
-	    position: absolute;
-	    top: 50%;
-		left: 50%;
-		z-index: 2;
-		background-color: rgba(30, 30, 30, 0.88);
-		border-radius: 12px;
-		padding: 40px 48px;
-		backdrop-filter: blur(8px);
+  .description-container {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    transform: translateX(-50%) translateY(-50%);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 2;
+    background-color: rgba(30, 30, 30, 0.88);
+    border-radius: 12px;
+    padding: 40px 48px;
+    backdrop-filter: blur(8px);
 
-    	.title {
-			padding-top: 0;
-			font-weight: 700;
-			font-size: 40px;
-			color: #e2e8f0;
-		}
+    .title {
+      padding-top: 0;
+      font-weight: 700;
+      font-size: 40px;
+      color: #e2e8f0;
+    }
 
-    	.sub-title {
-			font-size: 20px;
-			padding-bottom: 20px;
-			color: #94a3b8;
-			font-weight: 400;
-		}
+    .sub-title {
+      font-size: 20px;
+      padding-bottom: 20px;
+      color: #94a3b8;
+      font-weight: 400;
+    }
 
-		.description {
-			font-size: 18px;
-			font-weight: 300;
-			color: #cbd5e1;
-			line-height: 1.7;
-		}
-	}
+    .description {
+      font-size: 18px;
+      font-weight: 300;
+      color: #cbd5e1;
+      line-height: 1.7;
+    }
+  }
 
-	#canvas-container {
-		position: absolute;
-		width: 100%;
-	}
+  #canvas-container {
+    position: absolute;
+    width: 100%;
+  }
 
-	@media (max-width: 600px) and (orientation: portrait) {
-	  	.description-container {
-		    width: calc(100% - 30px);
-		    padding-left: 15px;
-		    padding-right: 15px;
+  @media (max-width: 600px) and (orientation: portrait) {
+    .description-container {
+      width: calc(100% - 30px);
+      padding-left: 15px;
+      padding-right: 15px;
 
-			.title {
-		    	font-size: 9vw;
-		 	}
-		 	.sub-title {
-				font-size: 6vw;
-			}
-			.description {
-		    	font-size: 5vw;
-		  	}
-		}
-	}
-	@media (max-width: 800px) and (orientation: landscape) {
-	  	.description-container {
-			.title {
-				padding-top: 5px;
-		    	font-size: 3vw;
-		 	}
-		 	.sub-title {
-				font-size: 2vw;
-				padding-bottom: 5px;
-			}
-			.description {
-		    	font-size: 2vw;
-		  	}
-		}
-	}
+      .title {
+        font-size: 9vw;
+      }
+      .sub-title {
+        font-size: 6vw;
+      }
+      .description {
+        font-size: 5vw;
+      }
+    }
+  }
+  @media (max-width: 800px) and (orientation: landscape) {
+    .description-container {
+      .title {
+        padding-top: 5px;
+        font-size: 3vw;
+      }
+      .sub-title {
+        font-size: 2vw;
+        padding-bottom: 5px;
+      }
+      .description {
+        font-size: 2vw;
+      }
+    }
+  }
 }

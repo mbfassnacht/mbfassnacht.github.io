@@ -1,43 +1,43 @@
-@import "../../_globals.scss";
+@use "../../_globals.scss" as *;
 
 .avatar {
-	background-color: $bg-white;
-	border-radius: 250px;
-	margin: 0 auto;
-	text-align: center;
-	height: 300px;
-	width: 300px;
-	display: block;
-	left: 0;
-	right: 0;
-	visibility: hidden;
-	z-index: 2;
-	box-shadow: $shadow-lg;
-	border: 4px solid $border;
+  background-color: $bg-white;
+  border-radius: 250px;
+  margin: 0 auto;
+  text-align: center;
+  height: 300px;
+  width: 300px;
+  display: block;
+  left: 0;
+  right: 0;
+  visibility: hidden;
+  z-index: 2;
+  box-shadow: $shadow-lg;
+  border: 4px solid $border;
 
-  	img {
-		border-radius: 250px;
-		margin: 0 auto;
-		height: 300px;
-		width: 300px;
-	}
+  img {
+    border-radius: 250px;
+    margin: 0 auto;
+    height: 300px;
+    width: 300px;
+  }
 
-	@media (max-width: 600px) and (orientation: portrait) {
-		height: 50vw;
-		width: 50vw;
+  @media (max-width: 600px) and (orientation: portrait) {
+    height: 50vw;
+    width: 50vw;
 
-	  	img {
-			height: 50vw;
-			width: 50vw;
-		}
-	}
-	@media (max-width: 800px) and (orientation: landscape) {
-		height: 30vw;
-		width: 30vw;
+    img {
+      height: 50vw;
+      width: 50vw;
+    }
+  }
+  @media (max-width: 800px) and (orientation: landscape) {
+    height: 30vw;
+    width: 30vw;
 
-	  	img {
-			height: 30vw;
-			width: 30vw;
-		}
-	}
+    img {
+      height: 30vw;
+      width: 30vw;
+    }
+  }
 }

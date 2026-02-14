@@ -1,3 +1,3 @@
 module.exports = {
-	'title': 'INSPIRATIONAL STUFF'
+  title: "INSPIRATIONAL STUFF",
 };

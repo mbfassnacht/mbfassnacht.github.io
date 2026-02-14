@@ -1,35 +1,35 @@
-@import "../_globals.scss";
+@use "../_globals.scss" as *;
 
 #projects {
-	background-color: $bg-white;
-	min-height: 100vh;
-	font-family: $inter;
-	padding-bottom: 60px;
+  background-color: $bg-white;
+  min-height: 100vh;
+  font-family: $inter;
+  padding-bottom: 60px;
 
-	.title {
-		margin: 0;
-    	padding: 60px 0 40px;
-		color: $text-primary;
-		text-align: center;
-		font-size: 42px;
-		font-weight: 700;
-		letter-spacing: 2px;
+  .title {
+    margin: 0;
+    padding: 60px 0 40px;
+    color: $text-primary;
+    text-align: center;
+    font-size: 42px;
+    font-weight: 700;
+    letter-spacing: 2px;
 
-		&::after {
-			content: '';
-			display: block;
-			width: 60px;
-			height: 4px;
-			background-color: $accent;
-			margin: 16px auto 0;
-			border-radius: 2px;
-		}
-	}
+    &::after {
+      content: "";
+      display: block;
+      width: 60px;
+      height: 4px;
+      background-color: $accent;
+      margin: 16px auto 0;
+      border-radius: 2px;
+    }
+  }
 
-	@media (max-width: 800px) {
-		.title {
-			font-size: 30px;
-			padding: 40px 0 24px;
-		}
-	}
+  @media (max-width: 800px) {
+    .title {
+      font-size: 30px;
+      padding: 40px 0 24px;
+    }
+  }
 }

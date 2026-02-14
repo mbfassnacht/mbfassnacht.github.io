@@ -1,82 +1,84 @@
-@import "../../_globals.scss";
+@use "../../_globals.scss" as *;
 
 .project {
-	flex: 1;
-	font-family: $inter;
-	border-radius: 12px;
-	overflow: hidden;
-	box-shadow: $shadow-md;
-	transition: box-shadow 0.3s ease, transform 0.3s ease;
+  flex: 1;
+  font-family: $inter;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: $shadow-md;
+  transition:
+    box-shadow 0.3s ease,
+    transform 0.3s ease;
 
-	&:hover {
-		box-shadow: $shadow-lg;
-		transform: translateY(-4px);
-	}
+  &:hover {
+    box-shadow: $shadow-lg;
+    transform: translateY(-4px);
+  }
 
-	.content-container {
-		position: relative;
+  .content-container {
+    position: relative;
 
-		.image-container {
-    		height: 100%;
-    		cursor: pointer;
+    .image-container {
+      height: 100%;
+      cursor: pointer;
 
-			.image {
-    			width: 100%;
-				display: block;
-			}
-		}
+      .image {
+        width: 100%;
+        display: block;
+      }
+    }
 
-		.hover-container {
-			overflow: auto;
-			height: 100%;
-			width: 100%;
-			z-index: 100;
-			background-color: rgba(30, 41, 59, 0.9);
-			position: absolute;
-			top: 0;
-			left: 0;
-			visibility: hidden;
-			opacity: 0;
-			color: #ffffff;
-			padding: 24px;
-			display: flex;
-			flex-direction: column;
-			justify-content: center;
+    .hover-container {
+      overflow: auto;
+      height: 100%;
+      width: 100%;
+      z-index: 100;
+      background-color: rgba(30, 41, 59, 0.9);
+      position: absolute;
+      top: 0;
+      left: 0;
+      visibility: hidden;
+      opacity: 0;
+      color: #ffffff;
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
 
-			.project-name {
-				font-size: 26px;
-				font-weight: 700;
-				visibility: hidden;
-				margin-bottom: 4px;
-			}
+      .project-name {
+        font-size: 26px;
+        font-weight: 700;
+        visibility: hidden;
+        margin-bottom: 4px;
+      }
 
-			.project-client {
-				visibility: hidden;
-				font-size: 14px;
-				color: rgba(255, 255, 255, 0.7);
-			}
+      .project-client {
+        visibility: hidden;
+        font-size: 14px;
+        color: rgba(255, 255, 255, 0.7);
+      }
 
-			.project-description {
-				margin-top: 16px;
-				margin-bottom: 16px;
-				visibility: hidden;
-				font-size: 14px;
-				line-height: 1.6;
-			}
+      .project-description {
+        margin-top: 16px;
+        margin-bottom: 16px;
+        visibility: hidden;
+        font-size: 14px;
+        line-height: 1.6;
+      }
 
-			.project-skills {
-				visibility: hidden;
-				font-size: 13px;
-				color: rgba(255, 255, 255, 0.8);
+      .project-skills {
+        visibility: hidden;
+        font-size: 13px;
+        color: rgba(255, 255, 255, 0.8);
 
-				.techno-title {
-					font-weight: 600;
-				}
-			}
-		}
-	}
+        .techno-title {
+          font-weight: 600;
+        }
+      }
+    }
+  }
 
-	@media (max-width: 800px) {
-		width: 100%;
-	}
+  @media (max-width: 800px) {
+    width: 100%;
+  }
 }

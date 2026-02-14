@@ -1,81 +1,81 @@
-@import "../../_globals.scss";
+@use "../../_globals.scss" as *;
 
 #hero {
-	height: 100vh;
-	width: 100%;
-	background-color: $bg-white;
-	position: relative;
-	display: flex;
-	align-items: center;
-	justify-content: center;
+  height: 100vh;
+  width: 100%;
+  background-color: $bg-white;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-	.background-image {
-		display: none;
-	}
+  .background-image {
+    display: none;
+  }
 
-  	.container {
-  		text-align: center;
-	    max-width: 700px;
-		padding: 0 20px;
+  .container {
+    text-align: center;
+    max-width: 700px;
+    padding: 0 20px;
 
-		h2 {
-			margin-top: 0;
-		}
+    h2 {
+      margin-top: 0;
+    }
 
-		.title-text {
-			color: $text-primary;
-			font-family: $inter;
-			line-height: 1.1em;
-		}
+    .title-text {
+      color: $text-primary;
+      font-family: $inter;
+      line-height: 1.1em;
+    }
 
-		.name {
-			font-size: 80px;
-			font-weight: 700;
-			margin-bottom: 16px;
-			position: relative;
-			display: inline-block;
+    .name {
+      font-size: 80px;
+      font-weight: 700;
+      margin-bottom: 16px;
+      position: relative;
+      display: inline-block;
 
-			&::after {
-				content: '';
-				display: block;
-				width: 60px;
-				height: 4px;
-				background-color: $accent;
-				margin: 16px auto 0;
-				border-radius: 2px;
-			}
-		}
+      &::after {
+        content: "";
+        display: block;
+        width: 60px;
+        height: 4px;
+        background-color: $accent;
+        margin: 16px auto 0;
+        border-radius: 2px;
+      }
+    }
 
-		.job {
-			font-size: 24px;
-			font-weight: 400;
-			color: $text-secondary;
-			letter-spacing: 3px;
-			text-transform: uppercase;
-			margin-top: 20px;
-		}
-	}
+    .job {
+      font-size: 24px;
+      font-weight: 400;
+      color: $text-secondary;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-top: 20px;
+    }
+  }
 
-	@media (max-width: 600px) {
-		.container {
-			.name {
-				font-size: 48px;
-			}
-			.job {
-				font-size: 18px;
-				letter-spacing: 2px;
-			}
-		}
-	}
+  @media (max-width: 600px) {
+    .container {
+      .name {
+        font-size: 48px;
+      }
+      .job {
+        font-size: 18px;
+        letter-spacing: 2px;
+      }
+    }
+  }
 
-	@media (max-width: 800px) and (orientation: landscape) {
-		.container {
-			.name {
-				font-size: 44px;
-			}
-			.job {
-				font-size: 16px;
-			}
-		}
-	}
+  @media (max-width: 800px) and (orientation: landscape) {
+    .container {
+      .name {
+        font-size: 44px;
+      }
+      .job {
+        font-size: 16px;
+      }
+    }
+  }
 }

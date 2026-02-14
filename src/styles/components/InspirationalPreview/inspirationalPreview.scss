@@ -1,37 +1,40 @@
- .inspirational-preview {
- 	min-height: $section-min-height;
-	background-color: $bg-light;
-	position: relative;
-	color: #ffffff;
-	.container {
-  		text-align: center;
-	  	transform: translateX(-50%) translateY(-50%);
-	    position: absolute;
-	    top: 50%;
-		left: 50%;
-		cursor: pointer;
-		width: 80vw;
-		.title {
-			font-size: 10vw;
-			font-family: $inter;
-		}
-		.divider {
-			width: 10%;
-			height: 1.5vw;
-			background-color: #ffffff;
-			margin: 0 auto;
-		}
+.inspirational-preview {
+  min-height: $section-min-height;
+  background-color: $bg-light;
+  position: relative;
+  color: #ffffff;
+  .container {
+    text-align: center;
+    transform: translateX(-50%) translateY(-50%);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    cursor: pointer;
+    width: 80vw;
+    .title {
+      font-size: 10vw;
+      font-family: $inter;
+    }
+    .divider {
+      width: 10%;
+      height: 1.5vw;
+      background-color: #ffffff;
+      margin: 0 auto;
+    }
 
-		a {
-			color:#ffffff;
-			text-decoration: none;
+    a {
+      color: #ffffff;
+      text-decoration: none;
 
-			&:visited {color:#ffffff;}  /* visited link */
-			&:hover {color:#ffffff;}  /* mouse over link */
-			&:active {color:#ffffff;}  /* selected link */
-		}
-
-
-	}
-
+      &:visited {
+        color: #ffffff;
+      } /* visited link */
+      &:hover {
+        color: #ffffff;
+      } /* mouse over link */
+      &:active {
+        color: #ffffff;
+      } /* selected link */
+    }
+  }
 }
