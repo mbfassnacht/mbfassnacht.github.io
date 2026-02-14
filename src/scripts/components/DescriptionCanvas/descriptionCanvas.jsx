@@ -147,7 +147,23 @@ function DescriptionCanvas() {
         <Avatar ref={avatarRef}></Avatar>
         <p className="title">{model.title}</p>
         <p className="sub-title">{model.subtitle}</p>
-        <p className="description">{model.description}</p>
+        <div className="terminal">
+          <div className="terminal-header">
+            <span className="terminal-dot red"></span>
+            <span className="terminal-dot yellow"></span>
+            <span className="terminal-dot green"></span>
+            <span className="terminal-title">bash</span>
+          </div>
+          <div className="terminal-body">
+            <p className="description">
+              <span className="terminal-prompt">
+                mbfassnacht@BEST-MACBOOK %{" "}
+              </span>
+              <span className="terminal-command">echo </span>"
+              {model.description}"
+            </p>
+          </div>
+        </div>
       </div>
     </div>
   );

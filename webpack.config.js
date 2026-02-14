@@ -16,16 +16,7 @@ module.exports = {
       },
       {
         test: /\.s?css$/,
-        use: [
-          "style-loader",
-          "postcss-loader",
-          {
-            loader: "sass-loader",
-            options: {
-              api: "modern-compiler",
-            },
-          },
-        ],
+        use: ["style-loader", "postcss-loader", "sass-loader"],
       },
       {
         test: /\.(woff|woff2|eot|ttf)$/,

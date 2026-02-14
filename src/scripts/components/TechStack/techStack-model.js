@@ -8,6 +8,8 @@ module.exports = {
         "React Native",
         "TypeScript",
         "JavaScript",
+        "Angular",
+        "Vue.js",
         "HTML5",
         "CSS3",
         "SASS",
@@ -15,15 +17,23 @@ module.exports = {
     },
     {
       name: "Backend",
-      items: ["Node.js", "REST APIs", "Java"],
+      items: [
+        "Node.js",
+        "REST APIs",
+        "Java",
+        "DB",
+        "GraphQL",
+        "Express",
+        "MongoDB",
+      ],
     },
     {
       name: "Cloud & CI/CD",
-      items: ["GCP", "AWS", "Github Actions"],
+      items: ["GCP", "AWS", "Github Actions", "Gitlab CI"],
     },
     {
       name: "Tools",
-      items: ["Git", "NPM", "Webpack"],
+      items: ["Claude Code", "Zed", "Git", "NPM", "Webpack"],
     },
   ],
 };
