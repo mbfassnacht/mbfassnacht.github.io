@@ -1,37 +1,35 @@
-require('normalize.css/normalize.css');
-require('../../styles/App.scss');
+require("normalize.css/normalize.css");
+require("../../styles/App.scss");
 
-import React from 'react';
-import Hero from '../components/Hero/hero.jsx';
-import DescriptionCanvas from '../components/DescriptionCanvas/descriptionCanvas.jsx';
-import ProjectsPreview from '../components/ProjectsPreview/projectsPreview.jsx';
-import AboutPreview from '../components/AboutPreview/aboutPreview.jsx';
-import Contact from '../components/Contact/contact.jsx';
-import ScrollManager from 'scroll-manager';
+import React, { useEffect } from "react";
+import Hero from "../components/Hero/hero.jsx";
+import DescriptionCanvas from "../components/DescriptionCanvas/descriptionCanvas.jsx";
+import ProjectsPreview from "../components/ProjectsPreview/projectsPreview.jsx";
+import AboutPreview from "../components/AboutPreview/aboutPreview.jsx";
+import Contact from "../components/Contact/contact.jsx";
+import TechStack from "../components/TechStack/techStack.jsx";
+import ScrollManager from "scroll-manager";
 
-class LandingPage extends React.Component {
+function LandingPage() {
+  useEffect(function () {
+    var scroller = new ScrollManager();
+    scroller.scrollTop({
+      element: document.body,
+      duration: 0.4,
+      ease: "easeOutExpo",
+    });
+  }, []);
 
-    componentDidMount() {
-        this.scroller =  new ScrollManager();
-        this.scroller.scrollTop({element: document.body, duration: 0.4, ease:'easeOutExpo'});
-    }
-
-    render() {
-        var props = this.props;
-        return (
-            <div className="app container-fluid" id="landing">
-                <Hero {...props} ref={'hero'}></Hero>
-                <DescriptionCanvas {...props} ref={'descriptionCanvas'}></DescriptionCanvas>
-                <ProjectsPreview {...props}></ProjectsPreview>
-                <AboutPreview {...props}></AboutPreview>
-                <Contact {...props}></Contact>
-            </div>
-        );
-    }
+  return (
+    <div className="app container-fluid" id="landing">
+      <Hero></Hero>
+      <DescriptionCanvas></DescriptionCanvas>
+      <TechStack></TechStack>
+      <ProjectsPreview></ProjectsPreview>
+      <AboutPreview></AboutPreview>
+      <Contact></Contact>
+    </div>
+  );
 }
-
-LandingPage.defaultProps = {
-
-};
 
 export default LandingPage;

@@ -1,63 +1,57 @@
-require('../../../styles/components/Contact/contact.scss');
+require("../../../styles/components/Contact/contact.scss");
 
-import React from 'react';
-import ReactDOM from 'react-dom';
-import {TweenMax, Expo} from 'gsap';
+import React, { useRef } from "react";
+import { TweenMax, Expo } from "gsap";
 
-var model = require('./contact-model');
+var model = require("./contact-model");
 
-class Contact extends React.Component {
+function Contact() {
+  const dividerRef = useRef(null);
 
+  function handleMouseEnter() {
+    TweenMax.to(dividerRef.current, 0.4, {
+      delay: 0.2,
+      width: "25%",
+      ease: Expo.easeOut,
+    });
+  }
 
-	componentDidMount() {
-		this.container = ReactDOM.findDOMNode(this);
-		this.divider = this.container.getElementsByClassName('divider')[0];
-		this.title = this.container.getElementsByClassName('title')[0];
-		this.linkNames = this.container.getElementsByClassName('link-name');
-		this.defaultColor = '#ffffff';
-	}
+  function handleMouseLeave() {
+    TweenMax.to(dividerRef.current, 0.4, { width: "10%", ease: Expo.easeOut });
+  }
 
-	handleMouseEnter() {
-		TweenMax.to(this.divider, 0.4, {delay:0.2, width:'25%', ease: Expo.easeOut});
-	}
+  return (
+    <div id="contact" className="section contact">
+      <h2 className="title">{model.title}</h2>
+      <div className="divider" ref={dividerRef}></div>
 
-	handleMouseLeave() {
-		TweenMax.to(this.divider, 0.4, {width:'10%', ease: Expo.easeOut});
-	}
-
-	render() {
-
-		return (
-		  	<div id="contact" className="section contact">
-				<h2 className="title">{model.title}</h2>
-				<div className="divider"></div>
-
-				<ul className="socials container-fluid">
-				{
-				  	model.socials.map(function(object, i){
-
-						return <li key={i} ref="{object.ref}" >
-							<a href={object.href} target="_blank" onMouseEnter={this.handleMouseEnter.bind(this, object.color)} onMouseLeave={this.handleMouseLeave.bind(this)}>
-								<div className="img-container"><img src={object.img}></img></div>
-								<p className="link-name">{object.title}</p>
-							</a>
-						</li>;
-				    }.bind(this))
-				}
-				</ul>
-				<div className="quick-data">
-					<p>{model.location}</p>
-				</div>
-				<div className="terms-container">
-					<p>{model.terms}</p>
-				</div>
-			</div>
-		);
-   	}
+      <ul className="socials container-fluid">
+        {model.socials.map(function (object, i) {
+          return (
+            <li key={i}>
+              <a
+                href={object.href}
+                target="_blank"
+                onMouseEnter={handleMouseEnter}
+                onMouseLeave={handleMouseLeave}
+              >
+                <div className="img-container">
+                  <img src={object.img}></img>
+                </div>
+                <p className="link-name">{object.title}</p>
+              </a>
+            </li>
+          );
+        })}
+      </ul>
+      <div className="quick-data">
+        <p>{model.location}</p>
+      </div>
+      <div className="terms-container">
+        <p>{model.terms}</p>
+      </div>
+    </div>
+  );
 }
-
-Contact.defaultProps = {
-
-};
 
 export default Contact;

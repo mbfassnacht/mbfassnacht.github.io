@@ -1,43 +1,48 @@
-require('../../../styles/components/Arrow/arrow.scss');
-import React from 'react';
-import ReactDOM  from'react-dom';
-import model from './arrow-model';
-import { TweenMax } from 'gsap';
-import ScrollManager from 'scroll-manager';
+require("../../../styles/components/Arrow/arrow.scss");
+import React, { useRef, useEffect } from "react";
+import model from "./arrow-model";
+import { TweenMax } from "gsap";
+import ScrollManager from "scroll-manager";
 
-class Arrow extends React.Component {
+function Arrow() {
+  const containerRef = useRef(null);
+  const imageRef = useRef(null);
+  const scrollerRef = useRef(null);
 
-	componentDidMount() {
-		this.hidden = false;
-		this.scroller =  new ScrollManager();
-		this.container = ReactDOM.findDOMNode(this);
-  	TweenMax.to(this.container, 0.4, {delay:0.8, autoAlpha: 1});
-  	this.image = this.container.getElementsByClassName('image-arrow')[0];
-	}
+  useEffect(function () {
+    scrollerRef.current = new ScrollManager();
+    TweenMax.to(containerRef.current, 0.4, { delay: 0.8, autoAlpha: 1 });
+  }, []);
 
-	handleMouseDown() {
-		this.scroller.scrollTo({element: document.body, to: window.innerHeight, duration: 0.8, ease:'easeOutCubic'});
-	}
+  function handleMouseDown() {
+    scrollerRef.current.scrollTo({
+      element: document.body,
+      to: window.innerHeight,
+      duration: 0.8,
+      ease: "easeOutCubic",
+    });
+  }
 
-	handleMouseEnter() {
-  		TweenMax.to(this.image, 0.4, {autoAlpha: 0.5});
-	}
+  function handleMouseEnter() {
+    TweenMax.to(imageRef.current, 0.4, { autoAlpha: 0.5 });
+  }
 
-	handleMouseLeave() {
-  		TweenMax.to(this.image, 0.4, {autoAlpha: 1});
-	}
+  function handleMouseLeave() {
+    TweenMax.to(imageRef.current, 0.4, { autoAlpha: 1 });
+  }
 
-	render() {
-		return (
-			<div id="arrow" className="white circle-button" onMouseEnter={this.handleMouseEnter.bind(this)} onMouseLeave={this.handleMouseLeave.bind(this)} onClick={this.handleMouseDown.bind(this)}>
-				<img className="image-arrow" src={model.arrow} />
-			</div>
-		);
-	}
+  return (
+    <div
+      id="arrow"
+      className="white circle-button"
+      ref={containerRef}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+      onClick={handleMouseDown}
+    >
+      <img className="image-arrow" ref={imageRef} src={model.arrow} />
+    </div>
+  );
 }
-
-Arrow.defaultProps = {
-
-};
 
 export default Arrow;

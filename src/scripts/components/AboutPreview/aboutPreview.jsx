@@ -1,51 +1,40 @@
-require('../../../styles/components/AboutPreview/aboutPreview.scss');
+require("../../../styles/components/AboutPreview/aboutPreview.scss");
 
-import React from 'react';
-import ReactDOM from 'react-dom';
-import TweenMax from 'gsap';
-import About from '../About/About.jsx';
-var model = require('./aboutPreview-model');
+import React, { useRef } from "react";
+import TweenMax from "gsap";
+import About from "../About/About.jsx";
+var model = require("./aboutPreview-model");
 
+function AboutPreview() {
+  const dividerRef = useRef(null);
+  const aboutRef = useRef(null);
 
-class AboutPreview extends React.Component {
+  function handleMouseEnter() {
+    TweenMax.to(dividerRef.current, 0.4, { width: "60%" });
+  }
 
-	componentDidMount() {
-		this.container = ReactDOM.findDOMNode(this);
-		this.divider = this.container.getElementsByClassName('divider')[0];
+  function handleMouseLeave() {
+    TweenMax.to(dividerRef.current, 0.4, { width: "10%" });
+  }
 
-	}
+  function handleMouseDown() {
+    aboutRef.current.show();
+  }
 
-	handleMouseEnter() {
-		TweenMax.to(this.divider, 0.4, {width:'60%'});
-	}
-
-	handleMouseLeave() {
-		TweenMax.to(this.divider, 0.4, {width:'10%'});
-	}
-
-	handleMouseDown() {
-		this.refs.about.show();
-	}
-
-	render() {
-		return (
-			<div className="about-preview">
-				<div className="container"
-					onMouseEnter={this.handleMouseEnter.bind(this)}
-					onMouseLeave={this.handleMouseLeave.bind(this)}
-					onMouseDown={this.handleMouseDown.bind(this)}
-					>
-					<span className="title">{model.title}</span>
-					<div className="divider"></div>
-				</div>
-				<About ref={'about'}></About>
-			</div>
-		);
-	}
+  return (
+    <div className="about-preview">
+      <div
+        className="container"
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
+        onMouseDown={handleMouseDown}
+      >
+        <span className="title">{model.title}</span>
+        <div className="divider" ref={dividerRef}></div>
+      </div>
+      <About ref={aboutRef}></About>
+    </div>
+  );
 }
-
-AboutPreview.defaultProps = {
-
-};
 
 export default AboutPreview;

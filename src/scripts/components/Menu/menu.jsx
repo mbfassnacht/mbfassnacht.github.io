@@ -1,116 +1,143 @@
-require('../../../styles/components/Menu/menu.scss');
+require("../../../styles/components/Menu/menu.scss");
 
-import React from 'react';
-import ReactDOM from 'react-dom';
-import TweenMax from 'gsap';
-import { Link } from 'react-router-dom'
-import Close from '../Close/close.jsx';
+import React, { useRef, useEffect } from "react";
+import TweenMax from "gsap";
+import { Link } from "react-router-dom";
+import Close from "../Close/close.jsx";
 
-var model = require('./menu-model');
+var model = require("./menu-model");
 
-class Menu extends React.Component {
+function Menu() {
+  const containerRef = useRef(null);
+  const menuRef = useRef(null);
+  const closeRef = useRef(null);
+  const openerRef = useRef(null);
+  const opened = useRef(false);
+  const isAnimating = useRef(false);
+  const requestedClose = useRef(false);
+  const linksRef = useRef(null);
+  const contactTitleRef = useRef(null);
 
-	componentDidMount() {
-		this.container = ReactDOM.findDOMNode(this);
-		this.links = this.container.getElementsByClassName('link');
-		this.contactTitle = this.container.getElementsByClassName('contact-title')[0];
-		this.requestedClose = false;
-		this.opener = this.refs.opener;
-		this.opened = false;
-		this.isAnimating = false;
+  useEffect(function () {
+    var navigationLinks =
+      containerRef.current.getElementsByClassName("navigation-link");
+    for (var i = 0; i < navigationLinks.length; i++) {
+      navigationLinks[i].addEventListener("click", close);
+    }
 
-		this.opener.addEventListener('click', function() {
-			if (!this.opened) {
-				this.open();
-			}
-		}.bind(this));
+    return function () {
+      for (var i = 0; i < navigationLinks.length; i++) {
+        navigationLinks[i].removeEventListener("click", close);
+      }
+    };
+  }, []);
 
-		this.navigationLinks = this.container.getElementsByClassName('navigation-link');
+  function open() {
+    if (!opened.current && !isAnimating.current) {
+      isAnimating.current = true;
+      var links = containerRef.current.getElementsByClassName("link");
 
-		for (var i = 0; i < this.navigationLinks.length; i++) {
-			this.navigationLinks[i].addEventListener('click', this.close);
-		}
-	}
+      TweenMax.fromTo(
+        menuRef.current,
+        0.2,
+        { width: 0 },
+        {
+          width: 300,
+          onComplete: function () {
+            TweenMax.staggerTo(links, 0.2, { autoAlpha: 1 }, 0.1, function () {
+              opened.current = true;
+              isAnimating.current = false;
+              if (requestedClose.current) {
+                close();
+              }
+            });
+          },
+        },
+      );
 
-	open() {
-		if (!this.opened && !this.isAnimating) {
-			this.isAnimating = true;
-			TweenMax.fromTo(this.refs.menu, 0.2,{width: 0}, {width: 300, onComplete: function(){
-				TweenMax.staggerTo(this.links, 0.2, { autoAlpha: 1}, 0.1, function(){
-					this.opened = true;
-					this.isAnimating = false;
-					if (this.requestedClose) {
-						this.close();
-					}
-				}.bind(this));
-			}.bind(this)});
+      closeRef.current.animateIn();
 
-			this.refs.close.animateIn();
+      TweenMax.fromTo(
+        contactTitleRef.current,
+        0.2,
+        { autoAlpha: 0 },
+        { delay: 0.6, autoAlpha: 1 },
+      );
+    }
+  }
 
-			TweenMax.fromTo(this.contactTitle, 0.2,{autoAlpha: 0}, {delay: 0.6, autoAlpha: 1});
+  function close() {
+    if (opened.current && !isAnimating.current) {
+      isAnimating.current = true;
+      requestedClose.current = false;
+      var links = containerRef.current.getElementsByClassName("link");
 
-		}
-	}
+      TweenMax.fromTo(
+        contactTitleRef.current,
+        0.2,
+        { autoAlpha: 1 },
+        { delay: 0.4, autoAlpha: 0 },
+      );
+      TweenMax.staggerTo(links, 0.2, { autoAlpha: 0 }, 0.1);
+      TweenMax.to(menuRef.current, 0.2, {
+        delay: 1.4,
+        width: 0,
+        onComplete: function () {
+          opened.current = false;
+          isAnimating.current = false;
+        },
+      });
+      closeRef.current.animateOut();
+    } else {
+      requestedClose.current = true;
+    }
+  }
 
-	close() {
-		if (this.opened && !this.isAnimating) {
-			this.isAnimating = true;
-			this.requestedClose = false;
-			TweenMax.fromTo(this.contactTitle, 0.2,{autoAlpha: 1}, {delay: 0.4, autoAlpha: 0});
-			TweenMax.staggerTo(this.links, 0.2, { autoAlpha: 0}, 0.1);
-			TweenMax.to(this.refs.menu, 0.2, { delay:1.4, width: 0, onComplete: function(){
-				this.opened = false;
-				this.isAnimating = false;
-			}.bind(this)});
-			this.refs.close.animateOut();
-		} else {
-			this.requestedClose = true;
-		}
+  function handleOpenerClick() {
+    if (!opened.current) {
+      open();
+    }
+  }
 
-	}
-
-	render() {
-		return (
-			<div className="menu">
-				<div ref={'opener'} className="opener">{model.title}</div>
-				<div ref={'menu'} className="real-menu">
-					<div className="close-icon">
-						<Close ref={'close'} onClicked={this.close.bind(this)} ></Close>
-					</div>
-					<div className="list">
-					{
-					  	model.links.map(function(object, i){
-							return <div className="link navigation-link" key={i}>
-								<Link onClick={this.close.bind(this)} to={object.to}>
-									{object.title}
-								</Link>
-							</div>;
-					    }.bind(this))
-					}
-					</div>
-					<div className="contact-container">
-						<div className="contact-title">{model.contact.title}</div>
-						<div className="contact-list">
-						{
-						  	model.contact.links.map(function(object, i){
-								return <div key={i} className="link">
-									<a href={object.href} className="link" target="_blank">
-										<p className="link-name">{object.title}</p>
-									</a>
-								</div>;
-						    }.bind(this))
-						}
-						</div>
-					</div>
-				</div>
-			</div>
-		);
-	}
+  return (
+    <div className="menu" ref={containerRef}>
+      <div ref={openerRef} className="opener" onClick={handleOpenerClick}>
+        {model.title}
+      </div>
+      <div ref={menuRef} className="real-menu">
+        <div className="close-icon">
+          <Close ref={closeRef} onClicked={close}></Close>
+        </div>
+        <div className="list">
+          {model.links.map(function (object, i) {
+            return (
+              <div className="link navigation-link" key={i}>
+                <Link onClick={close} to={object.to}>
+                  {object.title}
+                </Link>
+              </div>
+            );
+          })}
+        </div>
+        <div className="contact-container">
+          <div className="contact-title" ref={contactTitleRef}>
+            {model.contact.title}
+          </div>
+          <div className="contact-list">
+            {model.contact.links.map(function (object, i) {
+              return (
+                <div key={i} className="link">
+                  <a href={object.href} className="link" target="_blank">
+                    <p className="link-name">{object.title}</p>
+                  </a>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
 }
-
-
-Menu.defaultProps = {
-
-};
 
 export default Menu;

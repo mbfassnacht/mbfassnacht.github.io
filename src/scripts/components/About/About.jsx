@@ -1,70 +1,50 @@
-require('../../../styles/components/About/about.scss');
+require("../../../styles/components/About/about.scss");
 
-import React from 'react';
-import ReactDOM from 'react-dom';
-import TweenMax from 'gsap';
-import Close from '../Close/close.jsx';
+import React, { useRef, forwardRef, useImperativeHandle } from "react";
+import TweenMax from "gsap";
+import Close from "../Close/close.jsx";
 
-var model = require('./about-model');
+var model = require("./about-model");
 
-class About extends React.Component {
+const About = forwardRef(function About(props, ref) {
+  const containerRef = useRef(null);
+  const closeRef = useRef(null);
 
-	componentDidMount() {
-		this.container = ReactDOM.findDOMNode(this);
-		this.body = document.body;
-		this.divider = this.container.getElementsByClassName('divider')[0];
-		this.scrollContainer = this.container.getElementsByClassName('scroll-container')[0];
+  function hide() {
+    TweenMax.to(containerRef.current, 0.4, { autoAlpha: 0, zIndex: -100 });
+    TweenMax.set(document.body, { overflow: "auto" });
+    closeRef.current.animateOut();
+  }
 
-	}
+  function show() {
+    TweenMax.to(containerRef.current, 0.4, { autoAlpha: 1, zIndex: 10000 });
+    TweenMax.set(document.body, { overflow: "hidden" });
+    closeRef.current.animateIn();
+  }
 
-	closeHandler() {
-		this.hide();
-	}
+  useImperativeHandle(ref, function () {
+    return { show: show, hide: hide };
+  });
 
-	hide() {
-		TweenMax.to(this.container, 0.4, {autoAlpha: 0, zIndex: -100});
-		TweenMax.set(this.body, {overflow: 'auto'});
-		this.refs.close.animateOut();
-	}
-
-	show() {
-		TweenMax.to(this.container, 0.4, {autoAlpha: 1, zIndex: 1000});
-		TweenMax.set(this.body, {overflow: 'hidden'});
-		var height = window.innerHeight - 50 + 'px';
-		TweenMax.set(this.scrollContainer, {height: height});
-		this.refs.close.animateIn();
-	}
-
-	render() {
-		return (
-			<div className="about">
-				<div className="close-icon">
-					<Close ref={'close'} onClicked={this.closeHandler.bind(this)} ></Close>
-				</div>
-				<div className="scroll-container">
-					<div className="title">{model.title}</div>
-					<div className="description">
-						{
-						  	model.description.map(function(object, i){
-								return <p key={i} ref="{object.ref}" >
-								{model.description[i]}
-								</p>;
-						    }.bind(this))
-						}
-
-					</div>
-					<div className="phrase-container">
-						<div className="phrase">"{model.phrase}"</div>
-						<div className="author">{model.author}</div>
-					</div>
-				</div>
-			</div>
-		);
-	}
-}
-
-About.defaultProps = {
-
-};
+  return (
+    <div className="about" ref={containerRef}>
+      <div className="close-icon">
+        <Close ref={closeRef} onClicked={hide}></Close>
+      </div>
+      <div className="scroll-container">
+        <div className="title">{model.title}</div>
+        <div className="description">
+          {model.description.map(function (text, i) {
+            return <p key={i}>{text}</p>;
+          })}
+        </div>
+        <div className="phrase-container">
+          <div className="phrase">"{model.phrase}"</div>
+          <div className="author">{model.author}</div>
+        </div>
+      </div>
+    </div>
+  );
+});
 
 export default About;

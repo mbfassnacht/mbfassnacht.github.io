@@ -1,13 +1,19 @@
 @import "../../_globals.scss";
 
 .close {
-	height: 30px;
-	width: 30px;
+	height: 28px;
+	width: 28px;
 	cursor: pointer;
 	visibility: hidden;
-	svg{
-		height: 30px;
-		width: 30px;
-		fill: $grey;
+	transition: transform 0.2s ease;
+
+	&:hover {
+		transform: rotate(90deg);
+	}
+
+	svg {
+		height: 28px;
+		width: 28px;
+		fill: $text-secondary;
 	}
 }

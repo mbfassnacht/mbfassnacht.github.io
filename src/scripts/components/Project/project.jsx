@@ -1,107 +1,147 @@
-require('../../../styles/components/Project/project.scss');
+require("../../../styles/components/Project/project.scss");
 
-import React from 'react';
-import ReactDOM from 'react-dom';
-import {TweenMax, Expo} from 'gsap';
+import React, { useRef, useEffect } from "react";
+import { TweenMax, Expo } from "gsap";
 
-class Project extends React.Component {
+function Project(props) {
+  const containerRef = useRef(null);
+  const hoverContainerRef = useRef(null);
+  const nameRef = useRef(null);
+  const clientRef = useRef(null);
+  const descriptionRef = useRef(null);
+  const skillsRef = useRef(null);
+  const overlayShown = useRef(false);
+  const isAnimating = useRef(false);
+  const requestedAnimateOut = useRef(false);
 
-	componentDidMount() {
-		this.container = ReactDOM.findDOMNode(this);
-		this.hoverContainer = this.container.getElementsByClassName('hover-container')[0];
-		this.overlayShown = false;
-		this.name = this.container.getElementsByClassName('project-name')[0];
-		this.client = this.container.getElementsByClassName('project-client')[0];
-		this.description = this.container.getElementsByClassName('project-description')[0];
-		this.skills = this.container.getElementsByClassName('project-skills')[0];
+  useEffect(function () {
+    function handleResize() {
+      containerRef.current.style.width =
+        containerRef.current.parentNode.clientWidth / 2;
+    }
 
-		this.animateArray = [this.name, this.client, this.description, this.skills];
-		this.reverseAnimateArray = [this.skills, this.description, this.client, this.name];
-		this.isAnimating = false;
-		this.requestedAnimateOut = false;
+    window.addEventListener("resize", handleResize, true);
+    handleResize();
 
-		window.addEventListener('resize', this.handleResize.bind(this), true);
-		this.handleResize();
-	}
+    return function () {
+      window.removeEventListener("resize", handleResize, true);
+    };
+  }, []);
 
-  	handleResize() {
-  		this.container.style.width = this.container.parentNode.clientWidth / 2;
-	}
+  function getAnimateArray() {
+    return [
+      nameRef.current,
+      clientRef.current,
+      descriptionRef.current,
+      skillsRef.current,
+    ];
+  }
 
-	handleClick() {
-  		if (this.overlayShown) {
-  			this.handleMouseLeave();
-  		} else {
-  			this.handleMouseEnter();
-  		}
-	}
+  function getReverseAnimateArray() {
+    return [
+      skillsRef.current,
+      descriptionRef.current,
+      clientRef.current,
+      nameRef.current,
+    ];
+  }
 
-  	handleMouseEnter() {
-  		if (!this.isAnimating) {
-			this.isAnimating = true;
+  function handleClick() {
+    if (overlayShown.current) {
+      handleMouseLeave();
+    } else {
+      handleMouseEnter();
+    }
+  }
 
-			TweenMax.to(this.hoverContainer, 0.4, {autoAlpha: 1, ease: Expo.easeOut});
-			TweenMax.staggerFromTo(this.animateArray, 0.4, {autoAlpha: 0, y:15}, {autoAlpha: 1, y:0, ease: Expo.easeOut}, 0.2, function(){
-				this.isAnimating = false;
-				this.overlayShown = true;
-				if(this.requestedAnimateOut) {
-					this.handleMouseLeave();
-				}
-			}.bind(this));
-		}
-	}
+  function handleMouseEnter() {
+    if (!isAnimating.current) {
+      isAnimating.current = true;
 
-	handleMouseMove() {
-		if (!this.overlayShown) {
-			this.handleMouseEnter();
-		}
-	}
+      TweenMax.to(hoverContainerRef.current, 0.4, {
+        autoAlpha: 1,
+        ease: Expo.easeOut,
+      });
+      TweenMax.staggerFromTo(
+        getAnimateArray(),
+        0.4,
+        { autoAlpha: 0, y: 15 },
+        { autoAlpha: 1, y: 0, ease: Expo.easeOut },
+        0.2,
+        function () {
+          isAnimating.current = false;
+          overlayShown.current = true;
+          if (requestedAnimateOut.current) {
+            handleMouseLeave();
+          }
+        },
+      );
+    }
+  }
 
-	handleMouseLeave() {
-		if (!this.isAnimating) {
-			this.isAnimating = true;
-			this.requestedAnimateOut = false;
+  function handleMouseMove() {
+    if (!overlayShown.current) {
+      handleMouseEnter();
+    }
+  }
 
-			TweenMax.staggerFromTo(this.reverseAnimateArray, 0.4, {autoAlpha: 1, y:0}, {autoAlpha: 0, y:15, ease: Expo.easeOut}, 0.2);
-			TweenMax.to(this.hoverContainer, 0.4, {delay: 0.6, autoAlpha: 0, ease: Expo.easeOut, onComplete: function(){
-				this.isAnimating = false;
-				this.overlayShown = false;
-			}.bind(this)});
-		} else {
-			this.requestedAnimateOut = true;
-		}
+  function handleMouseLeave() {
+    if (!isAnimating.current) {
+      isAnimating.current = true;
+      requestedAnimateOut.current = false;
 
-	}
+      TweenMax.staggerFromTo(
+        getReverseAnimateArray(),
+        0.4,
+        { autoAlpha: 1, y: 0 },
+        { autoAlpha: 0, y: 15, ease: Expo.easeOut },
+        0.2,
+      );
+      TweenMax.to(hoverContainerRef.current, 0.4, {
+        delay: 0.6,
+        autoAlpha: 0,
+        ease: Expo.easeOut,
+        onComplete: function () {
+          isAnimating.current = false;
+          overlayShown.current = false;
+        },
+      });
+    } else {
+      requestedAnimateOut.current = true;
+    }
+  }
 
-	render() {
-
-		return (
-		  	<div className="project" onClick={this.handleClick.bind(this)} onMouseMove={this.handleMouseMove.bind(this)} onMouseEnter={this.handleMouseEnter.bind(this)} onMouseLeave={this.handleMouseLeave.bind(this)}>
-		  		<div className="content-container">
-			  		<div className="image-container">
-			  			<img className="image" src={this.props.image}></img>
-					</div>
-					<div className="hover-container">
-			  			<div className="project-name">{this.props.name}</div>
-			  			<div className="project-client">
-			  				A project for {this.props.client}
-			  			</div>
-			  			<div className="project-description">
-			  				{this.props.description}
-			  			</div>
-			  			<div className="project-skills">
-			  				<span className="techno-title">Technologies: </span>
-			  				{this.props.technologies}
-			  			</div>
-					</div>
-				</div>
-			</div>
-		);
-   	}
+  return (
+    <div
+      className="project"
+      ref={containerRef}
+      onClick={handleClick}
+      onMouseMove={handleMouseMove}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+    >
+      <div className="content-container">
+        <div className="image-container">
+          <img className="image" src={props.image}></img>
+        </div>
+        <div className="hover-container" ref={hoverContainerRef}>
+          <div className="project-name" ref={nameRef}>
+            {props.name}
+          </div>
+          <div className="project-client" ref={clientRef}>
+            A project for {props.client}
+          </div>
+          <div className="project-description" ref={descriptionRef}>
+            {props.description}
+          </div>
+          <div className="project-skills" ref={skillsRef}>
+            <span className="techno-title">Technologies: </span>
+            {props.technologies}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
 }
-
-Project.defaultProps = {
-
-};
 
 export default Project;

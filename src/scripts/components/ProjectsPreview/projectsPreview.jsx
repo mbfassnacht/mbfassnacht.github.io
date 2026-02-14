@@ -1,42 +1,36 @@
-require('../../../styles/components/ProjectsPreview/projectsPreview.scss');
+require("../../../styles/components/ProjectsPreview/projectsPreview.scss");
 
-import React from 'react';
-import ReactDOM from 'react-dom';
-import TweenMax from 'gsap';
-import { Link } from 'react-router-dom'
+import React, { useRef } from "react";
+import TweenMax from "gsap";
+import { Link } from "react-router-dom";
 
-var model = require('./projectsPreview-model');
+var model = require("./projectsPreview-model");
 
-class ProjectsPreview extends React.Component {
+function ProjectsPreview() {
+  const dividerRef = useRef(null);
 
-	componentDidMount() {
-		this.container = ReactDOM.findDOMNode(this);
-		this.divider = this.container.getElementsByClassName('divider')[0];
+  function handleMouseEnter() {
+    TweenMax.to(dividerRef.current, 0.4, { width: "60%" });
+  }
 
-	}
+  function handleMouseLeave() {
+    TweenMax.to(dividerRef.current, 0.4, { width: "10%" });
+  }
 
-	handleMouseEnter() {
-		TweenMax.to(this.divider, 0.4, {width:'60%'});
-	}
-
-	handleMouseLeave() {
-		TweenMax.to(this.divider, 0.4, {width:'10%'});
-	}
-
-	render() {
-		return (
-			<div className="projects-preview">
-				<div className="container" onMouseEnter={this.handleMouseEnter.bind(this)} onMouseLeave={this.handleMouseLeave.bind(this)}>
-					<Link to="projects" className="title">{model.title}</Link>
-					<div className="divider"></div>
-				</div>
-			</div>
-		);
-	}
+  return (
+    <div className="projects-preview">
+      <div
+        className="container"
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
+      >
+        <Link to="projects" className="title">
+          {model.title}
+        </Link>
+        <div className="divider" ref={dividerRef}></div>
+      </div>
+    </div>
+  );
 }
-
-ProjectsPreview.defaultProps = {
-
-};
 
 export default ProjectsPreview;

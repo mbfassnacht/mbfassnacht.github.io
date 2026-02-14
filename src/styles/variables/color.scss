@@ -1,7 +1,16 @@
-$olive-green: #80b800;
-$sky-blue: #00b9fd;
-$water-green: #00FDDB;
-$cool-orange: #fea800;
-$red: #F50000;
-$grey: #8C8C8C;
-$darkGrey: #333;
+$accent: #6b7280;
+$accent-light: #f3f4f6;
+$text-primary: #1e293b;
+$text-secondary: #64748b;
+$text-muted: #94a3b8;
+$bg-white: #ffffff;
+$bg-light: #f8fafc;
+$bg-dark: #1e293b;
+$border: #e2e8f0;
+$shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+$shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+$shadow-lg: 0 10px 25px -3px rgba(0, 0, 0, 0.1);
+
+// Legacy aliases (referenced in some components)
+$grey: $text-secondary;
+$darkGrey: $bg-dark;

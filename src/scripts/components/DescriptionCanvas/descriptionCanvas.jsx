@@ -1,134 +1,156 @@
-require('../../../styles/components/DescriptionCanvas/descriptionCanvas.scss');
+require("../../../styles/components/DescriptionCanvas/descriptionCanvas.scss");
 
-import React from 'react';
-import ReactDOM from 'react-dom';
-import * as THREE from 'three';
-import Avatar from '../Avatar/avatar.jsx';
+import React, { useRef, useEffect } from "react";
+import * as THREE from "three";
+import Avatar from "../Avatar/avatar.jsx";
 
-var model = require('./descriptionCanvas-model');
-var mobile = require('is-mobile');
-class DescriptionCanvas extends React.Component {
+var model = require("./descriptionCanvas-model");
+var mobile = require("is-mobile");
 
-	componentDidMount() {
-		this.container = ReactDOM.findDOMNode(this);
-		this.scrollListener = this.onScroll.bind(this);
-		window.addEventListener('scroll', this.scrollListener, true);
+function DescriptionCanvas() {
+  const containerRef = useRef(null);
+  const avatarRef = useRef(null);
+  const mouseX = useRef(0);
+  const mouseY = useRef(0);
+  const cameraRef = useRef(null);
+  const sceneRef = useRef(null);
+  const rendererRef = useRef(null);
+  const materialRef = useRef(null);
+  const animFrameRef = useRef(null);
 
-		if (mobile()) {
-			this.container.className += ' mobile';
-		} else {
-			this.initCanvas();
-		}
-	}
+  useEffect(function () {
+    var windowHalfX = window.innerWidth / 2;
+    var windowHalfY = window.innerHeight / 2;
 
-	componentWillUnmount() {
-		window.removeEventListener('scroll', this.scrollListener, true);
-	}
+    function onScroll() {
+      if (avatarRef.current) {
+        avatarRef.current.animateImage(window.scrollY);
+      }
+    }
 
-	onScroll() {
-		this.refs.avatar.animateImage(window.scrollY);
-	}
+    window.addEventListener("scroll", onScroll, true);
 
-	initCanvas () {
-		this.mouseX = 0;
-		this.mouseY = 0;
-		this.windowHalfX = window.innerWidth / 2;
-		this.windowHalfY = window.innerHeight / 2;
-		this.init();
-		this.animate();
+    if (mobile()) {
+      containerRef.current.className += " mobile";
+    } else {
+      initCanvas();
+    }
 
-	}
+    function initCanvas() {
+      cameraRef.current = new THREE.PerspectiveCamera(
+        55,
+        window.innerWidth / window.innerHeight,
+        2,
+        2000,
+      );
+      cameraRef.current.position.z = 1000;
+      sceneRef.current = new THREE.Scene();
+      sceneRef.current.fog = new THREE.FogExp2(0xf8fafc, 0.001);
+      var geometry = new THREE.Geometry();
+      var sprite = new THREE.TextureLoader().load("../assets/images/disc.png");
+      for (var i = 0; i < 10000; i++) {
+        var vertex = new THREE.Vector3();
+        vertex.x = 2000 * Math.random() - 1000;
+        vertex.y = 2000 * Math.random() - 1000;
+        vertex.z = 2000 * Math.random() - 1000;
+        geometry.vertices.push(vertex);
+      }
+      materialRef.current = new THREE.PointsMaterial({
+        size: 35,
+        sizeAttenuation: false,
+        map: sprite,
+        alphaTest: 0.5,
+        transparent: true,
+      });
+      materialRef.current.color.setHSL(0.6, 0.5, 0.55);
+      var particles = new THREE.Points(geometry, materialRef.current);
+      sceneRef.current.add(particles);
 
-	init() {
-		this.camera = new THREE.PerspectiveCamera( 55, window.innerWidth / window.innerHeight, 2, 2000 );
-		this.camera.position.z = 1000;
-		this.scene = new THREE.Scene();
-		this.scene.fog = new THREE.FogExp2( 0x000000, 0.001 );
-		this.geometry = new THREE.Geometry();
-		this.sprite = new THREE.TextureLoader().load( '../assets/images/disc.png' );
-		for ( var i = 0; i < 10000; i ++ ) {
-			var vertex = new THREE.Vector3();
-			vertex.x = 2000 * Math.random() - 1000;
-			vertex.y = 2000 * Math.random() - 1000;
-			vertex.z = 2000 * Math.random() - 1000;
-			this.geometry.vertices.push( vertex );
-		}
-		this.material = new THREE.PointsMaterial( { size: 35, sizeAttenuation: false, map: this.sprite, alphaTest: 0.5, transparent: true } );
-		this.material.color.setHSL( 1.0, 0.3, 0.7 );
-		this.particles = new THREE.Points( this.geometry, this.material );
-		this.scene.add( this.particles );
-		//
-		this.renderer = new THREE.WebGLRenderer();
-		this.renderer.setPixelRatio( window.devicePixelRatio );
-		this.renderer.setSize( window.innerWidth, window.innerHeight );
-		this.container.appendChild( this.renderer.domElement );
+      rendererRef.current = new THREE.WebGLRenderer({ alpha: true });
+      rendererRef.current.setClearColor(0xf8fafc, 1);
+      rendererRef.current.setPixelRatio(window.devicePixelRatio);
+      rendererRef.current.setSize(window.innerWidth, window.innerHeight);
+      containerRef.current.appendChild(rendererRef.current.domElement);
 
-		document.addEventListener( 'mousemove', this.onDocumentMouseMove.bind(this), false );
-		document.addEventListener( 'touchstart', this.onDocumentTouchStart.bind(this), false );
-		document.addEventListener( 'touchmove', this.onDocumentTouchMove.bind(this), false );
-		window.addEventListener( 'resize', this.onWindowResize.bind(this), false );
-	}
-	onWindowResize() {
-		this.windowHalfX = window.innerWidth / 2;
-		this.windowHalfY = window.innerHeight / 2;
-		this.camera.aspect = window.innerWidth / window.innerHeight;
-		this.camera.updateProjectionMatrix();
-		this.renderer.setSize( window.innerWidth, window.innerHeight );
-	}
+      document.addEventListener("mousemove", onDocumentMouseMove, false);
+      document.addEventListener("touchstart", onDocumentTouchStart, false);
+      document.addEventListener("touchmove", onDocumentTouchMove, false);
+      window.addEventListener("resize", onWindowResize, false);
 
-	onDocumentMouseMove( event ) {
-		this.mouseX = event.clientX - this.windowHalfX;
-		this.mouseY = event.clientY - this.windowHalfY;
-	}
+      animate();
+    }
 
- 	onDocumentTouchStart( event ) {
-		if ( event.touches.length == 1 ) {
-			event.preventDefault();
-			this.mouseX = event.touches[ 0 ].pageX - this.windowHalfX;
-			this.mouseY = event.touches[ 0 ].pageY - this.windowHalfY;
-		}
-	}
+    function onWindowResize() {
+      windowHalfX = window.innerWidth / 2;
+      windowHalfY = window.innerHeight / 2;
+      cameraRef.current.aspect = window.innerWidth / window.innerHeight;
+      cameraRef.current.updateProjectionMatrix();
+      rendererRef.current.setSize(window.innerWidth, window.innerHeight);
+    }
 
-	onDocumentTouchMove( event ) {
-		if ( event.touches.length == 1 ) {
-			event.preventDefault();
-			this.mouseX = event.touches[ 0 ].pageX - this.windowHalfX;
-			this.mouseY = event.touches[ 0 ].pageY - this.windowHalfY;
-		}
-	}
+    function onDocumentMouseMove(event) {
+      mouseX.current = event.clientX - windowHalfX;
+      mouseY.current = event.clientY - windowHalfY;
+    }
 
-	animate() {
-		requestAnimationFrame( this.animate.bind(this) );
-		this.renderCanvas();
-	}
+    function onDocumentTouchStart(event) {
+      if (event.touches.length == 1) {
+        event.preventDefault();
+        mouseX.current = event.touches[0].pageX - windowHalfX;
+        mouseY.current = event.touches[0].pageY - windowHalfY;
+      }
+    }
 
-	renderCanvas() {
-		var time = Date.now() * 0.00005;
-		this.camera.position.x += ( this.mouseX - this.camera.position.x ) * 0.05;
-		this.camera.position.y += ( - this.mouseY - this.camera.position.y ) * 0.05;
-		this.camera.lookAt( this.scene.position );
-		var h = ( 360 * ( 1.0 + time ) % 360 ) / 360;
-		this.material.color.setHSL( h, 0.5, 0.5 );
-		this.renderer.render( this.scene, this.camera );
-	}
+    function onDocumentTouchMove(event) {
+      if (event.touches.length == 1) {
+        event.preventDefault();
+        mouseX.current = event.touches[0].pageX - windowHalfX;
+        mouseY.current = event.touches[0].pageY - windowHalfY;
+      }
+    }
 
-	render() {
-		return (
-			<div className="description-canvas">
-				<div id="canvas-container" ref={'canvas'}></div>
-				<div className="description-container">
-					<Avatar ref={'avatar'}></Avatar>
-					<p className="title">{model.title}</p>
-					<p className="sub-title">{model.subtitle}</p>
-					<p className="description">{model.description}</p>
-				</div>
-			</div>
-		);
-	}
+    function animate() {
+      animFrameRef.current = requestAnimationFrame(animate);
+      renderCanvas();
+    }
+
+    function renderCanvas() {
+      var time = Date.now() * 0.00005;
+      cameraRef.current.position.x +=
+        (mouseX.current - cameraRef.current.position.x) * 0.05;
+      cameraRef.current.position.y +=
+        (-mouseY.current - cameraRef.current.position.y) * 0.05;
+      cameraRef.current.lookAt(sceneRef.current.position);
+      var h = ((360 * (1.0 + time)) % 360) / 360;
+      materialRef.current.color.setHSL(h, 0.4, 0.55);
+      rendererRef.current.render(sceneRef.current, cameraRef.current);
+    }
+
+    return function () {
+      window.removeEventListener("scroll", onScroll, true);
+      if (animFrameRef.current) {
+        cancelAnimationFrame(animFrameRef.current);
+      }
+      if (!mobile()) {
+        document.removeEventListener("mousemove", onDocumentMouseMove, false);
+        document.removeEventListener("touchstart", onDocumentTouchStart, false);
+        document.removeEventListener("touchmove", onDocumentTouchMove, false);
+        window.removeEventListener("resize", onWindowResize, false);
+      }
+    };
+  }, []);
+
+  return (
+    <div className="description-canvas" ref={containerRef}>
+      <div id="canvas-container"></div>
+      <div className="description-container">
+        <Avatar ref={avatarRef}></Avatar>
+        <p className="title">{model.title}</p>
+        <p className="sub-title">{model.subtitle}</p>
+        <p className="description">{model.description}</p>
+      </div>
+    </div>
+  );
 }
-
-DescriptionCanvas.defaultProps = {
-
-};
 
 export default DescriptionCanvas;

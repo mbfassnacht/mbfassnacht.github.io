@@ -1,10 +1,10 @@
-import 'core-js/fn/object/assign';
-import React from 'react';
-import ReactDOM from 'react-dom';
-import createHashHistory from 'history/createHashHistory';
-import Root from './root.jsx';
+import React from "react";
+import { createRoot } from "react-dom/client";
+import createHashHistory from "history/createHashHistory";
+import Root from "./root.jsx";
 
-const rootEl = document.getElementById('app-container');
+const rootEl = document.getElementById("app-container");
 const history = createHashHistory();
+const root = createRoot(rootEl);
 
-ReactDOM.render(<Root history={history} />, rootEl);
+root.render(<Root history={history} />);

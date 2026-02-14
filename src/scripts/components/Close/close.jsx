@@ -1,53 +1,75 @@
-require('../../../styles/components/Close/close.scss');
+require("../../../styles/components/Close/close.scss");
 
-import React from 'react';
-import ReactDOM from 'react-dom';
-import {TweenMax, Expo} from 'gsap';
-import loadsvg from 'load-svg';
+import React, {
+  useRef,
+  useEffect,
+  forwardRef,
+  useImperativeHandle,
+} from "react";
+import { TweenMax, Expo } from "gsap";
+import loadsvg from "load-svg";
 
-var model = require('./close-model');
+var model = require("./close-model");
 
-class Close extends React.Component {
+const Close = forwardRef(function Close(props, ref) {
+  const containerRef = useRef(null);
 
-	componentDidMount() {
-		this.container = ReactDOM.findDOMNode(this);
-		loadsvg(model.closeIcon, function (err, svg) {
-		    this.container.appendChild(svg);
-		}.bind(this));
-	}
+  useEffect(function () {
+    loadsvg(model.closeIcon, function (err, svg) {
+      if (containerRef.current) {
+        containerRef.current.appendChild(svg);
+      }
+    });
+  }, []);
 
-	handleMouseDown() {
-        if (typeof this.props.onClicked === 'function') {
-            this.props.onClicked();
-        }
-	}
+  useImperativeHandle(ref, function () {
+    return {
+      animateIn: function () {
+        TweenMax.to(containerRef.current, 0.4, {
+          delay: 0.4,
+          autoAlpha: 1,
+          ease: Expo.easeOut,
+        });
+      },
+      animateOut: function () {
+        TweenMax.to(containerRef.current, 0.4, {
+          delay: 0.4,
+          autoAlpha: 0,
+          ease: Expo.easeOut,
+        });
+      },
+    };
+  });
 
-	handleMouseEnter() {
-		TweenMax.to(this.container, 0.4, {rotation: '90', ease: Expo.easeOut});
-	}
+  function handleMouseDown() {
+    if (typeof props.onClicked === "function") {
+      props.onClicked();
+    }
+  }
 
-	handleMouseLeave() {
-		TweenMax.to(this.container, 0.4, {rotation: '-90', ease: Expo.easeOut});
-	}
+  function handleMouseEnter() {
+    TweenMax.to(containerRef.current, 0.4, {
+      rotation: "90",
+      ease: Expo.easeOut,
+    });
+  }
 
-	animateIn() {
-		TweenMax.to(this.container, 0.4, {delay: 0.4, autoAlpha: 1, ease: Expo.easeOut});
-	}
+  function handleMouseLeave() {
+    TweenMax.to(containerRef.current, 0.4, {
+      rotation: "-90",
+      ease: Expo.easeOut,
+    });
+  }
 
-	animateOut() {
-		TweenMax.to(this.container, 0.4, {delay: 0.4, autoAlpha: 0, ease: Expo.easeOut});
-	}
-
-	render() {
-		return (
-			<div className="close" onMouseDown={this.handleMouseDown.bind(this)} onMouseEnter={this.handleMouseEnter.bind(this)} onMouseLeave={this.handleMouseLeave.bind(this)}>
-			</div>
-		);
-	}
-}
-
-Close.defaultProps = {
-
-};
+  return (
+    <div
+      className="close"
+      ref={containerRef}
+      onMouseDown={handleMouseDown}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+    ></div>
+  );
+});
 
 export default Close;

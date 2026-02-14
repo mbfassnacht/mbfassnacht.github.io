@@ -1,22 +1,26 @@
+@import "../../_globals.scss";
+
 .projects-grid {
-	display: table;
-	width: calc(100% - 60px);
-    left: 0;
-    right: 0;
+	max-width: 1200px;
     margin: 0 auto;
+    padding: 0 30px;
+
     .project-row {
-    	margin-bottom: 20px;
+    	display: flex;
+    	gap: 24px;
+    	margin-bottom: 24px;
     }
 
     @media (max-width: 800px) {
+    	padding: 0 16px;
     	.project-row {
-    		margin-bottom: 0px;
+    		flex-direction: column;
+    		gap: 16px;
+    		margin-bottom: 16px;
     	}
 	}
 
     @media (max-width: 600px) and (orientation: portrait) {
-        width: 100%;
-
-       
+        padding: 0 12px;
     }
 }

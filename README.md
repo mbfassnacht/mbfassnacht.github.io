@@ -4,24 +4,24 @@ My personal portfolio created with React.
 
 ## INSTALLATION DEPENDENCES
 ```javascript
-yarn install
+pnpm install
 ```
 ### USAGE
 The following commands are available in your project:
 
 ```bash
 # Start for development
-yarn start
+pnpm start
 
 # Just build the dist version and copy static files
-yarn build
+pnpm run build
 
 # Run unit tests
-yarn test
+pnpm run test
 
 # Auto-run unit tests on file changes
-yarn test:watch
+pnpm run test:watch
 
 # Lint all files in src (also automatically done AFTER tests are run)
-yarn lint
+pnpm run lint
 ```

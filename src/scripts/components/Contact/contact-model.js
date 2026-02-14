@@ -1,12 +1,12 @@
 module.exports = {
   title: "CONTACT ME",
   location: "München - Deutschland",
-  email: "mbfassnacht@web.de",
+  email: "hello@fassnacht.dev",
   terms: "@mbfassnacht - All Rights Reserved ®",
   socials: [
     {
       ref: "email",
-      href: "mailto:mbfassnacht@web.de",
+      href: "mailto:hello@fassnacht.dev",
       img: "../assets/images/contact/email.png",
       title: "EMAIL",
       color: "#510000",
