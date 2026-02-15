@@ -12,12 +12,10 @@ var workExperience = diff_years(today, startWorking);
 module.exports = {
   title: "about me",
   description: [
-    "I'm @mbfassnacht.",
-    "Staff Software Engineer with " +
-      workExperience +
-      " years of experience in the full software development lifecycle.",
-    "Skilled in JavaScript, React, React Native, TypeScript, Node.js, GCP and AWS.",
-    "Contact me!.",
+    "I’m @mbfassnacht—a Staff Software Engineer with a passion for solving complex problems and building impactful solutions.",
+    "I thrive in collaborative environments, where I enjoy coaching and mentoring others to grow in their careers and technical skills.",
+    "With expertise in JavaScript, React, and cloud technologies, I focus on creating scalable, user-centric applications that make a difference.",
+    "Let’s connect and build something meaningful together!"
   ],
   phrase: "Stay Hungry, Stay Foolish",
   author: "Steve Jobs - Stanford 2005",
