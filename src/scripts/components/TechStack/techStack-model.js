@@ -13,6 +13,7 @@ module.exports = {
         "HTML5",
         "CSS3",
         "SASS",
+        "webpack"
       ],
     },
     {
@@ -20,11 +21,11 @@ module.exports = {
       items: [
         "Node.js",
         "REST APIs",
-        "Java",
         "DB",
         "GraphQL",
         "Express",
         "MongoDB",
+        "pub/sub"
       ],
     },
     {
@@ -33,7 +34,7 @@ module.exports = {
     },
     {
       name: "Tools",
-      items: ["Claude Code", "Zed", "Git", "NPM", "Webpack"],
+      items: ["Claude Code", "Zed", "Git", "NPM", "PNPM"],
     },
   ],
 };
