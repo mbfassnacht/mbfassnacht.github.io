@@ -16,8 +16,12 @@ function Project(props) {
 
   useEffect(function () {
     function handleResize() {
-      containerRef.current.style.width =
-        containerRef.current.parentNode.clientWidth / 2;
+      if (window.innerWidth <= 800) {
+        containerRef.current.style.width = "";
+      } else {
+        containerRef.current.style.width =
+          containerRef.current.parentNode.clientWidth / 2;
+      }
     }
 
     window.addEventListener("resize", handleResize, true);

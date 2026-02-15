@@ -2,14 +2,33 @@ module.exports = {
   projects: [
     [
       {
+        name: "Taxfix",
+        client: "Taxfix",
+        image: "../assets/images/projects/taxfix.png",
+        technologies: "Typescript, React, React Native, GCP, Firebase, Node.js",
+        description: "I am working at Taxfix as a Staff software Engineer.",
+      },
+    ],
+    [
+      {
+        name: "oneAudi",
+        client: "Audi",
+        image: "../assets/images/projects/audi_2.jpg",
+        technologies: "Typescript, Webpack Module Federation, React",
+        description:
+          "I worked as a Full Stack Engineer in this project in my time at Audi Business Innovation.",
+      },
+      {
         name: "Audi VMRS",
         client: "Audi",
         image: "../assets/images/projects/audi.png",
         technologies:
           "Javascript, NPM, Webpack, React, Flux, Grunt, CSS3, AngularJS, SASS",
         description:
-          "I´m working in this project as a Frontend Developer. We are building several REST frontend projects for our client",
+          "I worked in this project as a Senior Frontend Developer in Exozet",
       },
+    ],
+    [
       {
         name: "Data Center Murals",
         client: "Google",
@@ -65,6 +84,8 @@ module.exports = {
         description:
           "This project consist in a story telling for the Gallipoli War. Thi site has a particular interesting video player developed in WebGL. I worked in a frontend development team with 3 more developers. With this project we won 3 prices: FWA Site of the Day on November, FWA Mobile of the Day on January, Awwwards Site of the Day.",
       },
+    ],
+    [
       {
         name: "BST",
         client: "BST",
@@ -73,8 +94,6 @@ module.exports = {
         description:
           "I worked as a Frontend Developer in this project with two more developers creating a DOM game experience for a TV Show.",
       },
-    ],
-    [
       {
         name: "K12",
         client: "K12",

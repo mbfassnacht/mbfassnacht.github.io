@@ -152,7 +152,7 @@ function DescriptionCanvas() {
             <span className="terminal-dot red"></span>
             <span className="terminal-dot yellow"></span>
             <span className="terminal-dot green"></span>
-            <span className="terminal-title">bash</span>
+            <span className="terminal-title">zsh</span>
           </div>
           <div className="terminal-body">
             <p className="description">
