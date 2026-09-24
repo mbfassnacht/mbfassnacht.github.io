@@ -1,8 +1,8 @@
 module.exports = {
   title: "CONTACT ME",
-  location: "München - Deutschland",
+  location: "Heilbronn - Deutschland",
   email: "hello@fassnacht.dev",
-  terms: "@mbfassnacht - All Rights Reserved ®",
+  terms: "Máximo Fassnacht (@mbfassnacht) - All Rights Reserved ®",
   socials: [
     {
       ref: "email",
@@ -10,6 +10,13 @@ module.exports = {
       img: "../assets/images/contact/email.png",
       title: "EMAIL",
       color: "#510000",
+    },
+    {
+      ref: "linkedin",
+      href: "https://www.linkedin.com/in/mbfassnacht",
+      img: "../assets/images/contact/linkedin.png",
+      title: "LINKEDIN",
+      color: "#0A66C2",
     },
     {
       ref: "npm",
