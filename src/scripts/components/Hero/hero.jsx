@@ -29,9 +29,9 @@ function Hero() {
     <div id="hero">
       <div className="background-image"></div>
       <div className="container">
-        <h2 className="title-text name" ref={nameRef}>
+        <h1 className="title-text name" ref={nameRef}>
           {model.name}
-        </h2>
+        </h1>
         <h3 className="title-text job" ref={jobRef}>
           {model.job}
         </h3>

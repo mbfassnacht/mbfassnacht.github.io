@@ -10,7 +10,7 @@
     "lint": "eslint src",
     "format": "prettier --write \"src/**/*.{js,jsx,scss,css,json}\"",
     "format:check": "prettier --check \"src/**/*.{js,jsx,scss,css,json}\"",
-    "assets": "cp -R ./src/assets/* ./dist/assets/",
+    "assets": "cp -R ./src/assets/* ./dist/assets/ && cp ./src/favicon.ico ./src/robots.txt ./src/sitemap.xml ./dist/",
     "start": "NODE_OPTIONS=--openssl-legacy-provider webpack-dev-server --mode development",
     "build": "NODE_OPTIONS=--openssl-legacy-provider webpack --mode production && pnpm assets"
   },

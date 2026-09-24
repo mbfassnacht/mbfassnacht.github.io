@@ -5,8 +5,10 @@ module.exports = {
         name: "Taxfix",
         client: "Taxfix",
         image: "../assets/images/projects/taxfix.png",
-        technologies: "Typescript, React, React Native, GCP, Firebase, Node.js",
-        description: "I am working at Taxfix as a Staff software Engineer.",
+        technologies:
+          "TypeScript, Node.js, React, React Native, AWS, LLM agents, MCP, pnpm",
+        description:
+          "Engineering Manager and former Staff Software Engineer / Tech Lead. Led a 5-engineer team that built Taxfix’s new product for Germany’s ~3.7M self-employed from research to launch in 6 months, including an LLM agent for tax questions, invoice anomaly detection and an MCP server for Taxfix APIs. Drove org-wide RFCs for the web/mobile monorepo and the Yarn to pnpm migration.",
       },
     ],
     [

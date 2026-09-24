@@ -10,10 +10,10 @@ var startWorking = new Date(2011, 3, 25);
 var workExperience = diff_years(today, startWorking);
 
 module.exports = {
-  title: "@mbfassnacht",
-  subtitle: "Object-Oriented Analysis, Design and Development",
+  title: "Máximo Fassnacht",
+  subtitle: "Engineering Manager · Staff Software Engineer · AI Builder",
   description:
-    "Innovative Software Engineer having more than " +
+    "Engineering Manager and Staff Software Engineer with " +
     workExperience +
-    " years of experience in the full software development lifecycle – from concept through delivery of next-generation applications and customizable solutions.",
+    " years of experience building web, mobile and backend products in TypeScript, from startups to Audi. I lead teams, drive architecture and ship AI in production: LLM agents, anomaly detection and MCP servers.",
 };

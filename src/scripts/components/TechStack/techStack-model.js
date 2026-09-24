@@ -13,7 +13,7 @@ module.exports = {
         "HTML5",
         "CSS3",
         "SASS",
-        "webpack"
+        "webpack",
       ],
     },
     {
@@ -25,12 +25,31 @@ module.exports = {
         "GraphQL",
         "Express",
         "MongoDB",
-        "pub/sub"
+        "pub/sub",
       ],
     },
     {
       name: "Cloud & CI/CD",
       items: ["GCP", "AWS", "Github Actions", "Gitlab CI"],
+    },
+    {
+      name: "AI & LLMs",
+      items: [
+        "LLM Agents",
+        "MCP",
+        "Anomaly Detection",
+        "AI-assisted Development",
+      ],
+    },
+    {
+      name: "Architecture",
+      items: [
+        "Event-driven",
+        "Microservices",
+        "DDD",
+        "Monorepos",
+        "System Design",
+      ],
     },
     {
       name: "Tools",

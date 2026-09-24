@@ -19,6 +19,10 @@ module.exports = {
         title: "EMAIL",
       },
       {
+        href: "https://www.linkedin.com/in/mbfassnacht",
+        title: "LINKEDIN",
+      },
+      {
         href: "https://www.npmjs.com/~mbfassnacht",
         title: "NPM",
       },
