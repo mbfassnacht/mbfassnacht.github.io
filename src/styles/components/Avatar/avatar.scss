@@ -14,30 +14,23 @@
   z-index: 2;
   box-shadow: $shadow-lg;
   border: 4px solid $border;
+  overflow: hidden;
 
+  // Fill the circle inside the border (sizes on .avatar include the border).
   img {
-    border-radius: 250px;
-    margin: 0 auto;
-    height: 300px;
-    width: 300px;
+    display: block;
+    border-radius: 50%;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
   }
 
   @media (max-width: 600px) and (orientation: portrait) {
     height: 50vw;
     width: 50vw;
-
-    img {
-      height: 50vw;
-      width: 50vw;
-    }
   }
   @media (max-width: 800px) and (orientation: landscape) {
     height: 30vw;
     width: 30vw;
-
-    img {
-      height: 30vw;
-      width: 30vw;
-    }
   }
 }

@@ -40,12 +40,17 @@
     top: 30px;
     left: 30px;
     z-index: 100000;
-    width: 56px;
+    // Size to the label (content/menu.ts) instead of a fixed width.
+    min-width: 56px;
+    white-space: nowrap;
     text-align: center;
     border: 2px solid $text-primary;
-    padding: 10px;
+    padding: 10px 16px;
     font-size: 18px;
     font-weight: 600;
+    font-family: inherit;
+    // Solid so the label stays readable over the particle background.
+    background-color: $bg-white;
     color: $text-primary;
     cursor: pointer;
     transition: all 0.2s ease;

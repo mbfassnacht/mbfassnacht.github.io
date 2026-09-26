@@ -3,6 +3,9 @@
 .close {
   height: 28px;
   width: 28px;
+  padding: 0;
+  border: 0;
+  background: none;
   cursor: pointer;
   visibility: hidden;
   transition: transform 0.2s ease;
