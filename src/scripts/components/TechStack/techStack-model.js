@@ -20,6 +20,7 @@ module.exports = {
       name: "Backend",
       items: [
         "Node.js",
+        "Go",
         "REST APIs",
         "DB",
         "GraphQL",
@@ -30,7 +31,14 @@ module.exports = {
     },
     {
       name: "Cloud & CI/CD",
-      items: ["GCP", "AWS", "Github Actions", "Gitlab CI"],
+      items: [
+        "GCP",
+        "AWS",
+        "Docker",
+        "Kubernetes",
+        "Github Actions",
+        "Gitlab CI",
+      ],
     },
     {
       name: "AI & LLMs",
