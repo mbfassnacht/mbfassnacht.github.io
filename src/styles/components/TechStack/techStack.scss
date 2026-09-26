@@ -29,42 +29,52 @@
     text-align: left;
   }
 
+  // Each category is a TerminalWindow (styles in Terminal/terminal.scss).
   .category {
-    background-color: $bg-light;
-    border-radius: 12px;
-    padding: 28px;
-    border: 1px solid $border;
+    display: flex;
+    flex-direction: column;
 
-    .category-name {
-      font-family: $inter;
-      font-size: 18px;
+    .terminal-title {
+      color: #cbd5e1;
+      font-size: 14px;
       font-weight: 600;
-      color: $text-primary;
-      margin: 0 0 16px 0;
     }
 
+    .terminal-body {
+      flex: 1;
+      font-size: 15px;
+    }
+
+    .terminal-line {
+      margin: 0 0 8px;
+    }
+
+    // Laid out like `ls` output.
     .items {
       display: flex;
       flex-wrap: wrap;
-      gap: 8px;
+      gap: 2px 20px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
     }
 
+    // Hidden (but still in the DOM) until the `ls` command finishes typing,
+    // then printed one after another.
     .item {
-      display: inline-block;
-      padding: 6px 14px;
-      background-color: $bg-white;
-      border: 1px solid $border;
-      border-radius: 20px;
-      font-family: $inter;
-      font-size: 14px;
-      color: $text-secondary;
-      font-weight: 500;
-      transition: all 0.2s ease;
+      white-space: nowrap;
+      opacity: 0;
+      transition:
+        opacity 0.15s ease calc(var(--i) * 60ms),
+        color 0.2s ease;
 
       &:hover {
-        color: $accent;
-        border-color: $accent;
+        color: #fbbf24;
       }
+    }
+
+    .items.revealed .item {
+      opacity: 1;
     }
   }
 
@@ -80,8 +90,9 @@
       gap: 20px;
     }
 
-    .category {
-      padding: 20px;
+    .category .terminal-body {
+      padding: 16px;
+      font-size: 14px;
     }
   }
 }

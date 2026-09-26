@@ -10,9 +10,29 @@
   position: relative;
   background-color: $bg-white;
 
+  // Fades the particles out behind the text so the name and subtitle stay
+  // readable. Sits above the canvas and below .description-container.
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    background: radial-gradient(
+      ellipse 42% 48% at 50% 50%,
+      rgba(255, 255, 255, 0.92) 0%,
+      rgba(255, 255, 255, 0.8) 60%,
+      rgba(255, 255, 255, 0) 100%
+    );
+  }
+
   &.mobile {
     background-color: $bg-light;
     width: 100%;
+
+    &::after {
+      display: none;
+    }
   }
 
   .description-container {
@@ -30,6 +50,9 @@
       font-weight: 700;
       font-size: 40px;
       color: #1e293b;
+      text-shadow:
+        0 0 4px $bg-white,
+        0 0 16px $bg-white;
     }
 
     .sub-title {
@@ -37,69 +60,13 @@
       padding-bottom: 20px;
       color: #1e293b;
       font-weight: 400;
+      text-shadow:
+        0 0 4px $bg-white,
+        0 0 12px $bg-white;
     }
 
-    .terminal {
-      background-color: #1a1a2e;
-      border-radius: 8px;
-      overflow: hidden;
-      text-align: left;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
-
-      .terminal-header {
-        background-color: #2d2d3f;
-        padding: 10px 14px;
-        display: flex;
-        align-items: center;
-        gap: 8px;
-
-        .terminal-dot {
-          width: 12px;
-          height: 12px;
-          border-radius: 50%;
-
-          &.red {
-            background-color: #ff5f57;
-          }
-          &.yellow {
-            background-color: #febc2e;
-          }
-          &.green {
-            background-color: #28c840;
-          }
-        }
-
-        .terminal-title {
-          color: #6b7280;
-          font-size: 13px;
-          margin-left: auto;
-          margin-right: auto;
-          font-family: "SF Mono", "Fira Code", "Cascadia Code", monospace;
-        }
-      }
-
-      .terminal-body {
-        padding: 20px;
-
-        .description {
-          font-size: 16px;
-          font-weight: 400;
-          color: #a3e635;
-          line-height: 1.7;
-          font-family: "SF Mono", "Fira Code", "Cascadia Code", monospace;
-          margin: 0;
-        }
-
-        .terminal-command {
-          color: #fbbf24;
-          font-weight: 700;
-        }
-
-        .terminal-prompt {
-          color: #22d3ee;
-          font-weight: 700;
-        }
-      }
+    .terminal .terminal-body .description {
+      margin: 0;
     }
   }
 
